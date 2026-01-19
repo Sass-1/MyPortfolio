@@ -58,4 +58,4 @@ The website is built with:
 
 ---
 
-© 2026 D.H.S.S. Louis // END OF LINE
+© 2026 D.H.S.S. Louis
