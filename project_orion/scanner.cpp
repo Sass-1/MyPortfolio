@@ -1,3 +1,11 @@
+/*
+ * Project Orion - High-performance Network Port Scanner
+ * Author: Dülze Hkloë Sassie Shaikelta Louis
+ * Date: January 18, 2026
+ * Description: A custom C++ tool leveraging raw sockets and non-blocking I/O
+ * to perform rapid security auditing of network perimeters.
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
