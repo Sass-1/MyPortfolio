@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Typing Effect for About Me
-    const text = "Cybersecurity Analyst & Accounting Specialist. I bridge the gap between technical security and financial integrity. With a strong background in Finance and Accounting, I apply meticulous analytical rigor to system auditing and risk management. Leveraging professional accounting standards to ensure high-integrity security documentation and compliance auditing. Former Digital Marketing Tutor with a passion for knowledge transfer and leadership.";
+    const text = "I bridge the gap between technical infrastructure security and financial integrity. With a solid foundation in Accounting and Finance, I bring a unique analytical rigor to cybersecurity, specializing in System Auditing, Compliance (GRC), and Risk Assessment. My background allows me to understand not just the technical vulnerability, but its impact on the organization’s assets. I am also a former Digital Marketing Tutor, passionate about clear communication and technical mentorship.";
     const typingElement = document.getElementById('typewriter-text');
     let index = 0;
 
@@ -110,4 +110,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+    // Active Navigation Highlight
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

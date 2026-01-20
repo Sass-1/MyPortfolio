@@ -19,13 +19,18 @@
     <div class="scanline-overlay"></div>
     <canvas id="matrix-canvas"></canvas>
 
+    <div class="status-bar-container">
+        <p class="status-bar-text">SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [ GRANTED ]
+            // IDENTITY: [ VERIFIED ]</p>
+    </div>
+
     <nav class="navbar">
-        <div class="logo">D.H.S.S. <span class="accent">LOUIS</span></div>
+        <div class="logo">D.H.S.S. <span class="accent" data-text="LOUIS">LOUIS</span></div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Operations</a></li>
-            <li><a href="#contact" class="btn-primary">Contact</a></li>
+            <li><a href="#about">WHOAMI</a></li>
+            <li><a href="#skills">CAPABILITIES</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact" class="btn-primary">CONTACT</a></li>
         </ul>
     </nav>
 
@@ -34,8 +39,7 @@
             <div class="hero-content">
                 <p class="status-badge"><span class="status-dot"></span> STATUS: ONLINE / SCANNING</p>
                 <h1 class="long-name">Dülze Hkloë Sassie<br><span class="gradient-text">Shaikelta Louis</span></h1>
-                <p class="hero-subtitle">Cybersecurity Analyst & Accounting Specialist. Bridging the gap between
-                    technical security and financial integrity.</p>
+                <p class="hero-subtitle">Cybersecurity Analyst | Financial Audit Specialist</p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn-primary">View Operations</a>
                     <a href="#contact" class="btn-secondary">Initiate Handshake</a>
@@ -44,24 +48,30 @@
         </section>
 
         <section id="about" class="section-container">
-            <h2 class="section-title">01. <span class="mono">/whoami</span></h2>
+            <h2 class="section-title"><span class="mono">WHOAMI</span></h2>
             <div class="glass-card about-card">
                 <div class="about-text">
                     <p id="typewriter-text"></p>
                     <!-- Fallback content for SEO/No-JS -->
                     <noscript>
-                        Cybersecurity Analyst & Accounting Specialist. I bridge the gap between technical security and
-                        financial integrity. With a strong background in Finance and Accounting, I apply meticulous
-                        analytical rigor to system auditing and risk management. Leveraging professional accounting
-                        standards to ensure high-integrity security documentation and compliance auditing. Former
-                        Digital Marketing Tutor with a passion for knowledge transfer and leadership.
+                        I bridge the gap between technical infrastructure security and financial integrity. With a
+                        solid foundation in Accounting and Finance, I bring a unique analytical rigor to
+                        cybersecurity, specializing in System Auditing, Compliance (GRC), and Risk Assessment. My
+                        background allows me to understand not just the technical vulnerability, but its impact on
+                        the organization’s assets. I am also a former Digital Marketing Tutor, passionate about
+                        clear communication and technical mentorship.
                     </noscript>
                 </div>
                 <!-- Professional Photo Section -->
                 <div class="about-visual">
                     <div class="profile-photo-container">
                         <div class="photo-placeholder">
-                            <span class="icon-user">👤</span>
+                            <!-- User SVG -->
+                            <svg viewBox="0 0 24 24" width="60" height="60" stroke="#94a3b8" stroke-width="1.5"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
                         </div>
                         <div class="scan-line"></div>
                     </div>
@@ -70,68 +80,89 @@
         </section>
 
         <section id="skills" class="section-container">
-            <h2 class="section-title">02. <span class="mono">/capabilities</span></h2>
+            <h2 class="section-title"><span class="mono">CAPABILITIES</span></h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Defense & Compliance</h3>
+                    <h3>OFFENSIVE & DEFENSIVE</h3>
                     <div class="tags">
-                        <span class="tag">SIEM</span>
-                        <span class="tag">Firewall Config</span>
-                        <span class="tag">Incident Response</span>
-                        <span class="tag" style="border-color: var(--accent-secondary)">Financial Auditing</span>
-                        <span class="tag" style="border-color: var(--accent-secondary)">Risk Assessment</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Offense</h3>
-                    <div class="tags">
-                        <span class="tag">PenTesting</span>
+                        <span class="tag">Network Scanning</span>
+                        <span class="tag">Vulnerability Assessment</span>
                         <span class="tag">Kali Linux</span>
                         <span class="tag">Metasploit</span>
+                        <span class="tag">Wireshark</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Analysis & Dev</h3>
+                    <h3>AUDIT & COMPLIANCE</h3>
                     <div class="tags">
-                        <span class="tag">Wireshark</span>
-                        <span class="tag">Malware Analysis</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">C++ (Networking)</span>
+                        <span class="tag" style="border-color: var(--accent-secondary)">Financial Data
+                            Integrity</span>
+                        <span class="tag" style="border-color: var(--accent-secondary)">Risk Management</span>
+                        <span class="tag">Regulatory Compliance</span>
+                        <span class="tag">Forensic Accounting Mindset</span>
                     </div>
                 </div>
-            </div>
+                <div class="skill-category">
+                    <h3>DEVELOPMENT</h3>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Bash Scripting</span>
+                        <span class="tag">Version Control (Git/GitHub)</span>
+                    </div>
+                </div>
         </section>
 
         <section id="projects" class="section-container">
-            <h2 class="section-title">03. <span class="mono">/operations</span></h2>
+            <h2 class="section-title"><span class="mono">PROJECTS</span></h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <article class="project-card glass-card">
                     <div class="project-header">
-                        <h3 class="mono">Project_Orion</h3>
-                        <span class="icon">�</span>
+                        <h3 class="mono">Project Orion - High-Performance C++ Port Scanner</h3>
+                        <span class="icon">
+                            <!-- Terminal Icon -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 17 10 11 4 5"></polyline>
+                                <line x1="12" y1="19" x2="20" y2="19"></line>
+                            </svg>
+                        </span>
                     </div>
-                    <p>Advanced Network Port Scanner developed in C++. Features custom timeout management (setsockopt),
-                        real-time terminal feedback (\r), and optimized for the Well-known ports range (1-1024).</p>
+                    <p>A multi-threaded network security tool developed in C++ to identify open ports and active
+                        services.</p>
                     <div class="project-details">
                         <h4 class="mono"
                             style="font-size: 0.9rem; color: var(--accent-secondary); margin-bottom: 0.5rem;">
-                            Technologies:</h4>
-                        <div class="tags small-tags">
+                            Features & Objective:</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Custom socket timeout management
+                            (setsockopt) for speed, real-time terminal feedback, and error handling for TCP
+                            handshakes.<br>Objective: To provide a lightweight, dependency-free tool for rapid network
+                            reconnaissance.</p>
+                        <div class="tags small-tags" style="margin-top: 10px;">
                             <span class="tag">C++</span>
+                            <span class="tag">Multi-threading</span>
                             <span class="tag">Sockets API</span>
                             <span class="tag">TCP/IP</span>
-                            <span class="tag">Network Security</span>
                         </div>
                     </div>
-                    <a href="https://github.com/louis/project-orion-placeholder" class="link-arrow">View Source -></a>
+                    <div class="project-actions">
+                        <a href="https://github.com/louis/project-orion-placeholder" class="link-arrow">View Source
+                            -></a>
+                    </div>
                 </article>
 
                 <!-- Project 2 -->
                 <article class="project-card glass-card">
                     <div class="project-header">
                         <h3 class="mono">Secure_Auth</h3>
-                        <span class="icon">🛡️</span>
+                        <span class="icon">
+                            <!-- Shield Icon -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </span>
                     </div>
                     <p>Implementation of 2FA system using TOTP algorithm.</p>
                     <div class="project-tech">
@@ -144,7 +175,14 @@
                 <article class="project-card glass-card">
                     <div class="project-header">
                         <h3 class="mono">Log_Sentinel</h3>
-                        <span class="icon">👁️</span>
+                        <span class="icon">
+                            <!-- Eye Icon -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </span>
                     </div>
                     <p>Automated log analysis tool for detecting anomalies.</p>
                     <div class="project-tech">
@@ -156,7 +194,14 @@
                 <article class="project-card glass-card" style="border-left: 3px solid var(--accent-secondary);">
                     <div class="project-header">
                         <h3 class="mono">Digital_Tutor</h3>
-                        <span class="icon">🎓</span>
+                        <span class="icon">
+                            <!-- Graduation Cap -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg>
+                        </span>
                     </div>
                     <p>Volunteered to teach digital marketing concepts, developed custom curriculum, and mentored
                         students, enhancing leadership and communication skills.</p>
@@ -171,15 +216,22 @@
         </section>
 
         <section id="leadership" class="section-container">
-            <h2 class="section-title">03b. <span class="mono">/soft_skills</span></h2>
+            <h2 class="section-title"><span class="mono">SOFT SKILLS</span></h2>
             <div class="glass-card" style="border-left: 3px solid #f59e0b;">
                 <div class="project-header">
-                    <h3 class="mono">Leadership & Pedagogy</h3>
-                    <span class="icon">🗣️</span>
+                    <h3 class="mono">DIGITAL MARKETING & TECH TUTOR</h3>
+                    <span class="icon">
+                        <!-- Message/Speech Icon -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                    </span>
                 </div>
-                <p><strong>Digital Marketing Tutor:</strong> Mentored students in digital strategies, demonstrating
-                    strong communication and pedagogical skills. Passionate about knowledge transfer and empowering
-                    others.</p>
+                <p>Mentored students in digital strategies and tool adoption. Developed pedagogical materials to
+                    simplify complex concepts, enhancing my leadership and knowledge transfer skills.</p>
                 <div class="tags" style="margin-top: 1rem;">
                     <span class="tag">Communication</span>
                     <span class="tag">Mentoring</span>
@@ -189,7 +241,7 @@
         </section>
 
         <section id="contact" class="section-container">
-            <h2 class="section-title">04. <span class="mono">/contact</span></h2>
+            <h2 class="section-title"><span class="mono">CONTACT</span></h2>
             <div class="glass-card contact-wrapper">
                 <h3>Ready to secure your infrastructure?</h3>
                 <p>Available for freelance projects and consulting.</p>
@@ -225,8 +277,11 @@
         </section>
     </main>
 
+    <div id="back-to-top" title="Back to Top">^</div>
+
     <footer>
-        <p class="mono">© 2026 Dülze Hkloë Sassie Shaikelta Louis // END OF LINE</p>
+        <p class="mono">Copyright © 2026 | Louis.sec</p>
+        <div class="status-dot" style="margin: 0;"></div>
     </footer>
 
     <script src="script.js"></script>
