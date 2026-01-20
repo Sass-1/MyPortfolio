@@ -1,61 +1,36 @@
-# Louis | Cybersecurity & Finance Portfolio
+# LOUIS | CYBERSECURITY & AUDIT PORTFOLIO
 
-![Status](https://img.shields.io/badge/STATUS-ONLINE-success?style=for-the-badge)
-![Role](https://img.shields.io/badge/ROLE-CYBER_ANALYST-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/SYSTEM_STATUS-STABLE-success?style=for-the-badge&logo=github)
+![Identity](https://img.shields.io/badge/IDENTITY-VERIFIED-blue?style=for-the-badge)
+![English](https://img.shields.io/badge/LANGUAGE-ENGLISH-orange?style=for-the-badge)
 
-Welcome to my professional portfolio. I am a Cybersecurity Analyst with a background in **Accounting and Finance**, bridging the gap between technical security and compliance/risk management.
-
-## 🚀 About This Repo
-
-This repository contains the source code for my personal portfolio website and **Project Orion**, a custom C++ network tool.
-
-### 👤 Profile
-- **Name:** Dülze Hkloë Sassie Shaikelta Louis
-- **Expertise:** Cybersecurity (SOC/Pentest), Financial Auditing, Risk Assessment.
-- **Background:** Former Digital Marketing Tutor, bringing leadership and pedagogical skills to technical teams.
+Welcome to my professional environment. I am a Cybersecurity Analyst specializing in the intersection of **Technical Security** and **Financial Integrity**.
 
 ---
 
-## 🛠️ Project Orion (Port Scanner)
+## 🛡️ THE HYBRID ADVANTAGE
 
-**Project Orion** is a high-performance network port scanner written in C++. It is designed for speed and reliability in auditing network perimeters.
+My background in **Accounting and Finance** provides a unique perspective on Cybersecurity:
+- **Audit-Ready Mindset:** Applying financial auditing rigor to System Compliance (GRC).
+- **Risk Assessment:** Understanding the financial impact of technical vulnerabilities.
+- **Data Integrity:** Ensuring that security measures protect not just the network, but the core business assets.
 
-### Features
-- **Custom Socket Management:** Uses raw sockets with `setsockopt` for precise control.
-- **Non-blocking I/O:** Implements `select()` for custom timeout management (0.5s default).
-- **Real-time Feedback:** Terminal UI updates in real-time using carriage return (`\r`) overwriting.
-- **Optimization:** Focused scan on Well-Known Ports (1-1024).
+---
 
-### How to Compile & Run
+## 🛠️ PROJECT ORION (C++ PORT SCANNER)
 
-You need a C++ compiler (like g++).
+**Project Orion** is a professional-grade reconnaissance tool developed in **C++**. It demonstrates my ability to work with low-level networking and high-performance code.
 
+### ⚙️ Technical Highlights
+* **Socket API:** Direct implementation of the Berkeley Sockets API.
+* **Timeout Management:** Custom `setsockopt` and `struct timeval` for ultra-fast response times.
+* **Memory Efficiency:** No external dependencies, ensuring a lightweight footprint.
+* **Terminal UX:** Clean CLI output with real-time port status reporting.
+
+### 🚀 Usage
 ```bash
-# Navigate to the project folder
-cd project_orion
+# Compilation
+g++ scanner.cpp -o orion -O3
 
-# Compile the source code
-g++ scanner.cpp -o orion
-
-# Run the scanner (requires an IP address)
-./orion 127.0.0.1
-```
-
----
-
-## 🌐 Portfolio Structure
-
-The website is built with:
-- **HTML5** (Semantic structure)
-- **CSS3** (Custom properties, Glassmorphism, Animations)
-- **JavaScript** (Typing effects, Scroll observers)
-
-**Cyber Features implemented:**
-- Glitch Typography
-- Neon Hover Effects
-- Scanline Overlay
-- Interactive Terminal Elements
-
----
-
-© 2026 D.H.S.S. Louis
+# Execution (Syntax: ./orion <target_ip>)
+./orion 192.168.1.1
