@@ -17,6 +17,16 @@
 <body>
     <div class="background-mesh"></div>
     <div class="scanline-overlay"></div>
+    <div class="data-stream-background">
+        <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path fill="none" stroke="rgba(6,182,212,0.15)" stroke-width="2"
+                d="M0,160 L48,140 C96,120,192,80,288,90 C384,100,480,160,576,170 C672,180,768,140,864,130 C960,120,1056,140,1152,150 C1248,160,1344,160,1392,160 L1440,160V320H0Z"
+                class="stream-path-1"></path>
+            <path fill="none" stroke="rgba(59,130,246,0.15)" stroke-width="2"
+                d="M0,192 L48,170 C96,150,192,110,288,120 C384,130,480,190,576,200 C672,210,768,170,864,160 C960,150,1056,170,1152,180 C1248,190,1344,190,1392,190 L1440,190V320H0Z"
+                class="stream-path-2"></path>
+        </svg>
+    </div>
     <canvas id="matrix-canvas"></canvas>
 
     <div class="status-bar-container">
@@ -131,6 +141,25 @@
                     </div>
                     <p>A multi-threaded network security tool developed in C++ to identify open ports and active
                         services.</p>
+
+                    <div class="terminal-preview">
+                        <div class="terminal-header">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="cmd-line"><span class="prompt root">root@orion:~#</span> <span
+                                    class="typing-cmd">g++ scanner.cpp -o orion -pthread</span></div>
+                            <div class="cmd-line delayed"><span class="prompt root">root@orion:~#</span> <span
+                                    class="typing-cmd">./orion -t 192.168.1.5 -p 1-1024</span></div>
+                            <div class="cmd-output delayed-2">
+                                <span class="accent">></span> Scanning host 192.168.1.5...<br>
+                                <span class="success">[+]</span> Port 22 (SSH) - OPEN<br>
+                                <span class="success">[+]</span> Port 80 (HTTP) - OPEN<br>
+                                <span class="dim">Scan complete. 2 open ports found.</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-details">
                         <h4 class="mono"
                             style="font-size: 0.9rem; color: var(--accent-secondary); margin-bottom: 0.5rem;">
@@ -272,16 +301,27 @@
                         </svg>
                     </a>
                 </div>
-                <a href="mailto:louis@example.com" class="btn-primary big-btn">louis@example.com</a>
+                <!-- Contact button removed as per request -->
             </div>
         </section>
     </main>
 
     <div id="back-to-top" title="Back to Top">^</div>
 
-    <footer>
-        <p class="mono">Copyright © 2026 | Louis.sec</p>
-        <div class="status-dot" style="margin: 0;"></div>
+    <footer class="footer">
+        <p class="mono copyright">&copy; 2026 DHS Security. All Systems Nominal <span class="status-dot"></span></p>
+        <div class="system-log-trigger" id="system-log-trigger">
+            <span class="cmd-icon">>_</span> SYSTEM LOG <span class="toggle-icon">[+]</span>
+        </div>
+        <div id="system-log-overlay" class="system-log-overlay hidden">
+            <div class="log-header">
+                <span>KERNEL_LOG.SYS</span>
+                <span class="close-log">[x]</span>
+            </div>
+            <div class="log-content" id="log-content">
+                <!-- Log lines injected by JS -->
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

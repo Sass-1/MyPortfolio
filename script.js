@@ -57,25 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Typing Effect for About Me
+    // Typewriter Effect
     const text = "I bridge the gap between technical infrastructure security and financial integrity. With a solid foundation in Accounting and Finance, I bring a unique analytical rigor to cybersecurity, specializing in System Auditing, Compliance (GRC), and Risk Assessment. My background allows me to understand not just the technical vulnerability, but its impact on the organization’s assets. I am also a former Digital Marketing Tutor, passionate about clear communication and technical mentorship.";
-    const typingElement = document.getElementById('typewriter-text');
-    let index = 0;
+
+    const speed = 30; // Faster typing speed
+    let i = 0;
+    const element = document.getElementById("typewriter-text");
 
     function typeWriter() {
-        if (index < text.length) {
-            typingElement.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 15); // Faster typing speed
+        if (i < text.length) {
+            element.textContent += text.charAt(i); // Use textContent to avoid stripping cursor
+
+            // Ensure cursor class is active
+            if (!element.classList.contains("typing-cursor")) {
+                element.classList.add("typing-cursor");
+            }
+
+            i++;
+            setTimeout(typeWriter, speed);
         } else {
-            typingElement.classList.add('typing-cursor'); // Add blinking cursor at end
+            // Typing complete, keep cursor blinking
         }
     }
 
     // Start typing when About section is in view
+    let typingStarted = false;
     const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && index === 0) { // Only start if not started
+            if (entry.isIntersecting && !typingStarted) {
+                typingStarted = true;
                 typeWriter();
             }
         });
@@ -149,6 +159,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    }
+
+    // System Log Easter Egg
+    const logTrigger = document.getElementById('system-log-trigger');
+    const logOverlay = document.getElementById('system-log-overlay');
+    const closeLog = document.querySelector('.close-log');
+    const logContent = document.getElementById('log-content');
+
+    const logMessages = [
+        "Initializing secure handshake...",
+        "Verifying cryptographic signatures...",
+        "Scanning port 443 [HTTPS]...",
+        "Traffic analysis: NORMAL",
+        "Buffer overflow protection: ACTIVE",
+        "Financial integrity check: PASSED",
+        "Loading modules: [GRC_V2.0, AUDIT_CORE]",
+        "Identity verified: LOUIS.SEC"
+    ];
+
+    let logInterval;
+
+    function addLogLine() {
+        const line = document.createElement('div');
+        line.classList.add('log-line');
+        const timestamp = new Date().toLocaleTimeString('en-GB');
+        const msg = logMessages[Math.floor(Math.random() * logMessages.length)];
+        line.innerHTML = `<span style="color:#64748b">[${timestamp}]</span> ${msg}`;
+
+        logContent.appendChild(line);
+
+        // Auto scroll
+        if (logContent.children.length > 8) {
+            logContent.removeChild(logContent.firstChild);
+        }
+    }
+
+    if (logTrigger && logOverlay) {
+        logTrigger.addEventListener('click', () => {
+            logOverlay.classList.remove('hidden');
+            setTimeout(() => logOverlay.classList.add('active'), 10);
+
+            // Start generating logs
+            clearInterval(logInterval);
+            logInterval = setInterval(addLogLine, 800);
+        });
+
+        closeLog.addEventListener('click', () => {
+            logOverlay.classList.remove('active');
+            setTimeout(() => logOverlay.classList.add('hidden'), 400);
+            clearInterval(logInterval);
         });
     }
 });
