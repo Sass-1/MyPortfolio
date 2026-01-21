@@ -25,7 +25,7 @@ My background in **Accounting and Finance** provides a unique perspective on Cyb
 * **Socket API:** Direct implementation of the Berkeley Sockets API.
 * **Timeout Management:** Custom `setsockopt` and `struct timeval` for ultra-fast response times.
 * **Memory Efficiency:** No external dependencies, ensuring a lightweight footprint.
-* **Terminal UX:** Clean CLI output with real-time port status reporting.
+* **Terminal UX:** Clean CLI output with real-time port status reporting
 
 ### 🚀 Usage
 ```bash
