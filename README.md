@@ -13,7 +13,7 @@ Welcome to my professional environment. I am a Cybersecurity Analyst specializin
 My background in **Accounting and Finance** provides a unique perspective on Cybersecurity:
 - **Audit-Ready Mindset:** Applying financial auditing rigor to System Compliance (GRC)
 - **Risk Assessment:** Understanding the financial impact of technical vulnerabilities
-- **Data Integrity:** Ensuring that security measures protect not just the network, but the core business assets.
+- **Data Integrity:** Ensuring that security measures protect not just the network, but the core business assets
 
 ---
 
