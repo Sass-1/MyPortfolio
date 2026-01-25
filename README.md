@@ -8,7 +8,7 @@ Welcome to my professional environment. I am a Cybersecurity Analyst specializin
 
 ---
 
-## 🛡️ THE HYBRID ADVANTAGE
+##  THE HYBRID ADVANTAGE
 
 My background in **Accounting and Finance** provides a unique perspective on Cybersecurity:
 - **Audit-Ready Mindset:** Applying financial auditing rigor to System Compliance (GRC)
@@ -17,17 +17,17 @@ My background in **Accounting and Finance** provides a unique perspective on Cyb
 
 ---
 
-## 🛠️ PROJECT ORION (C++ PORT SCANNER)
+##  PROJECT ORION (C++ PORT SCANNER)
 
 **Project Orion** is a professional-grade reconnaissance tool developed in **C++**. It demonstrates my ability to work with low-level networking and high-performance code.
 
-### ⚙️ Technical Highlights
+###  Technical Highlights
 * **Socket API:** Direct implementation of the Berkeley Sockets API.
 * **Timeout Management:** Custom `setsockopt` and `struct timeval` for ultra-fast response times.
 * **Memory Efficiency:** No external dependencies, ensuring a lightweight footprint.
 * **Terminal UX:** Clean CLI output with real-time port status reporting
 
-### 🚀 Usage
+###  Usage
 ```bash
 # Compilation
 g++ scanner.cpp -o orion -O3
