@@ -887,8 +887,7 @@ h3 {
 }
 
 /* Glitch + Link Hover Effects */
-.nav-links a:hover,
-.btn-primary:hover {
+.nav-links a:not(.btn-primary):hover {
     text-shadow: 2px 0 var(--accent-secondary), -2px 0 #ff00c1;
     animation: glitch-text-hover 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
 }
