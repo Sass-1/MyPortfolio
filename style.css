@@ -158,6 +158,10 @@ h3 {
     text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
 }
 
+.hero-actions .btn-primary {
+    animation: none !important;
+}
+
 @keyframes breathing {
     0% {
         box-shadow: 0 0 5px rgba(6, 182, 212, 0.2);
@@ -286,6 +290,7 @@ h3 {
 .nav-links a.btn-primary {
     opacity: 1 !important;
     border-bottom: 1px solid transparent !important;
+    color: #FFFFFF !important;
     /* Reset border for button */
 }
 
