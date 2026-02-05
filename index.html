@@ -36,6 +36,28 @@
 
     <nav class="navbar">
         <div class="logo">D.H.S.S. <span class="accent" data-text="LOUIS">LOUIS</span></div>
+
+        <!-- Mode Switcher (Sliding Toggle) -->
+        <div class="mode-toggle-container" id="mode-toggle-container">
+            <div class="slider-accent"></div>
+            <button class="mode-option active" id="mode-cyber" data-mode="cyber" title="Cyber Mode">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+            </button>
+            <button class="mode-option" id="mode-finance" data-mode="finance" title="Finance Mode">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                    <line x1="12" y1="10" x2="14" y2="8"></line>
+                    <circle cx="12" cy="6" r="2"></circle>
+                </svg>
+            </button>
+        </div>
         <ul class="nav-links">
             <li><a href="#about">WHOAMI</a></li>
             <li><a href="#skills">CAPABILITIES</a></li>
@@ -48,8 +70,8 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <p class="status-badge"><span class="status-dot"></span> STATUS: ONLINE / SCANNING</p>
-                <h1 class="long-name">Dülze Hkloë Sassie<br><span class="gradient-text">Shaikelta Louis</span></h1>
-                <p class="hero-subtitle">Cybersecurity Analyst | Financial Audit Specialist</p>
+                <h1 class="long-name">Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span></h1>
+                <p class="hero-subtitle">Cybersecurity Analyst</p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn-primary">View Operations</a>
                     <a href="#contact" class="btn-secondary">Initiate Handshake</a>
@@ -92,7 +114,7 @@
         <section id="skills" class="section-container">
             <h2 class="section-title"><span class="mono">CAPABILITIES</span></h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category cyber-only">
                     <h3>OFFENSIVE & DEFENSIVE</h3>
                     <div class="tags">
                         <span class="tag">Network Scanning</span>
@@ -100,6 +122,15 @@
                         <span class="tag">Kali Linux</span>
                         <span class="tag">Metasploit</span>
                         <span class="tag">Wireshark</span>
+                    </div>
+                </div>
+                <div class="skill-category finance-only" style="display: none;">
+                    <h3>EXPERTISE FINANCIÈRE</h3>
+                    <div class="tags">
+                        <span class="tag">Analyse de données financières</span>
+                        <span class="tag">Veille documentaire législative</span>
+                        <span class="tag">Gestion de bases de données</span>
+                        <span class="tag">Conformité réglementaire</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -127,7 +158,7 @@
             <h2 class="section-title"><span class="mono">PROJECTS</span></h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <article class="project-card glass-card">
+                <article class="project-card glass-card cyber-only">
                     <div class="project-header">
                         <h3 class="mono">Project Orion - High-Performance C++ Port Scanner</h3>
                         <span class="icon">
@@ -176,13 +207,32 @@
                         </div>
                     </div>
                     <div class="project-actions">
-                        <a href="https://github.com/louis/project-orion-placeholder" class="link-arrow">View Source
+                        <a href="https://github.com/Sass-1/project-orion-placeholder" class="link-arrow">View Source
                             -></a>
                     </div>
                 </article>
 
+                <!-- Project PhishDetector (Cyber Only) -->
+                <article class="project-card glass-card cyber-only">
+                    <div class="project-header">
+                        <h3 class="mono">PhishDetector</h3>
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <p>AI-powered email analysis tool detecting phishing attempts with 98% accuracy.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>TensorFlow</span><span>NLP</span>
+                    </div>
+                    <a href="#" class="link-arrow">View Source -></a>
+                </article>
+
                 <!-- Project 2 -->
-                <article class="project-card glass-card">
+                <article class="project-card glass-card cyber-only">
                     <div class="project-header">
                         <h3 class="mono">Secure_Auth</h3>
                         <span class="icon">
@@ -201,7 +251,7 @@
                 </article>
 
                 <!-- Project 3 -->
-                <article class="project-card glass-card">
+                <article class="project-card glass-card cyber-only">
                     <div class="project-header">
                         <h3 class="mono">Log_Sentinel</h3>
                         <span class="icon">
@@ -219,8 +269,8 @@
                     </div>
                     <a href="#" class="link-arrow">View Source -></a>
                 </article>
-                <!-- Digital Marketing Tutor Experience -->
-                <article class="project-card glass-card" style="border-left: 3px solid var(--accent-secondary);">
+                <!-- Digital Marketing Tutor Experience (Finance/General) -->
+                <article class="project-card glass-card cyber-only">
                     <div class="project-header">
                         <h3 class="mono">Digital_Tutor</h3>
                         <span class="icon">
@@ -239,6 +289,71 @@
                     </div>
                     <span class="link-arrow">Experience -></span>
                 </article>
+
+                <!-- Digital Marketing Tutor (Finance Version) -->
+                <article class="project-card glass-card finance-only" style="display: none;">
+                    <div class="project-header">
+                        <h3 class="mono">Digital_Tutor</h3>
+                        <span class="icon">
+                            <!-- Audit Report / Loupe Icon -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                                <path d="M10 9H8"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <p>Gestion de curriculum et structuration pédagogique pour des programmes de marketing numérique,
+                        mettant l'accent sur l'analyse et la méthodologie.</p>
+                    <div class="project-tech">
+                        <span>Pédagogie</span><span>Structuration</span><span>Analyse</span>
+                    </div>
+                    <span class="link-arrow">Détails -></span>
+                </article>
+
+                <!-- Audit de Gouvernance Placeholder (Finance Only) -->
+                <article class="project-card glass-card finance-only" style="display: none;">
+                    <div class="project-header">
+                        <h3 class="mono">Audit de Gouvernance</h3>
+                        <span class="icon">
+                            <!-- Shield/Check Icon -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="section-placeholder">Mission à venir chez ECC. Préparation de l'audit de conformité et
+                        analyse des risques.</p>
+                    <div class="project-tech">
+                        <span>Audit</span><span>GRC</span><span>ECC</span>
+                    </div>
+                    <span class="link-arrow">En Préparation -></span>
+                </article>
+            </div>
+
+            <!-- Finance Only Projects Placeholder -->
+            <div class="projects-grid finance-only" style="display: none; margin-top: 2rem;">
+                <article class="project-card glass-card">
+                    <div class="project-header">
+                        <h3 class="mono">Financial Audit Automation</h3>
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <p>Automated reconciliation scripts reducing audit time by 40%.</p>
+                    <div class="project-tech">
+                        <span>Python (Pandas)</span><span>Excel VBA</span>
+                    </div>
+                </article>
             </div>
             </article>
             </div>
@@ -251,33 +366,53 @@
             <div class="glass-card contact-wrapper">
                 <h3>Ready to secure your infrastructure?</h3>
                 <p>Available for freelance projects and consulting.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/dülze-hkloë-sassie-shaikelta-louis-1701b7370" target="_blank"
-                        class="social-icon-btn" data-tooltip="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                            </path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/louis" target="_blank" class="social-icon-btn" data-tooltip="GitHub">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="mailto:sassie.louis@esih.edu" class="social-icon-btn" data-tooltip="Email">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </a>
+                <div id="contact-interaction-zone">
+                    <button id="dynamic-contact-btn" class="cyber-btn-glitch" data-text="DECRYPT CONTACT">
+                        <span class="btn-text">DECRYPT CONTACT</span>
+                    </button>
+
+                    <div id="contact-reveal" class="hidden-reveal">
+                        <!-- Content revealed after interaction -->
+                        <div class="contact-card-content">
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/dülze-hkloë-sassie-shaikelta-louis-1701b7370"
+                                    target="_blank" class="social-icon-btn" data-tooltip="LinkedIn">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Sass-1" target="_blank" class="social-icon-btn"
+                                    data-tooltip="GitHub">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="mailto:sassie.louis@esih.edu" class="social-icon-btn" data-tooltip="Email">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="contact-card-details finance-only"
+                                style="margin-top: 1rem; color: var(--text-main);">
+                                <p style="margin:0; font-weight:bold;">Louis Sassie</p>
+                                <p style="margin:0; font-size:0.9rem;">Cybersecurity Analyst</p>
+                                <p style="margin:0; font-size:0.8rem; opacity:0.8;">sassie.louis@esih.edu</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Contact button removed as per request -->
             </div>
@@ -288,7 +423,7 @@
 
     <footer class="footer">
         <p class="mono copyright">&copy; 2026 DHS Security. All Systems Nominal <span class="status-dot"></span></p>
-        <div class="system-log-trigger" id="system-log-trigger">
+        <div class="system-log-trigger cyber-only" id="system-log-trigger">
             <span class="cmd-icon">>_</span> SYSTEM LOG <span class="toggle-icon">[+]</span>
         </div>
         <div id="system-log-overlay" class="system-log-overlay hidden">

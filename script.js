@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = '#0F0'; // Matrix Green
+            ctx.fillStyle = '#06b6d4'; // Theme Cyan
             ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < rainDrops.length; i++) {
@@ -210,6 +210,199 @@ document.addEventListener('DOMContentLoaded', () => {
             logOverlay.classList.remove('active');
             setTimeout(() => logOverlay.classList.add('hidden'), 400);
             clearInterval(logInterval);
+        });
+    }
+
+    // ==========================================
+    // MODE SWITCHER LOGIC (SLIDING TOGGLE)
+    // ==========================================
+    const modeToggleContainer = document.getElementById('mode-toggle-container');
+    const modeCyber = document.getElementById('mode-cyber');
+    const modeFinance = document.getElementById('mode-finance');
+
+    // Hero Element References
+    const heroName = document.querySelector('.long-name');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const typewriterElement = document.getElementById("typewriter-text");
+
+    // Bio Content
+    const bioCyber = "Focus on offensive security operations, penetration testing, and infrastructure resilience analysis. Specialized in PhishDetector development and network reconnaissance.";
+    const bioFinance = "Dedicated to financial integrity, regulatory compliance (ECC), and governance auditing. Applying rigorous analytical methodology to detect fraud and ensure data accuracy.";
+
+    // Function to set theme
+    function setTheme(theme) {
+        if (theme === 'finance') {
+            document.body.setAttribute('data-theme', 'finance');
+            if (modeToggleContainer) modeToggleContainer.classList.add('finance-active');
+
+            if (modeFinance) modeFinance.classList.add('active');
+            if (modeCyber) modeCyber.classList.remove('active');
+
+            // Update Status Text
+            const statusText = document.querySelector('.status-bar-text');
+            if (statusText) statusText.innerHTML = `MARKET STATUS: [ <span class="status-stable" style="color:#16a34a">BULLISH</span> ] // INDEX: [ SPX +1.2% ] // AUDIT: [ ONGOING ]`;
+
+            // Canvas handled by CSS (display: none)
+            if (canvas) canvas.style.opacity = '0';
+
+            // Dynamic Hero Content (Finance)
+            if (heroName) heroName.innerHTML = `Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span>`;
+
+            if (heroSubtitle) {
+                heroSubtitle.style.transition = 'opacity 0.3s ease-in-out';
+                heroSubtitle.style.opacity = '0';
+                setTimeout(() => {
+                    heroSubtitle.textContent = "Financial Audit Specialist";
+                    heroSubtitle.style.opacity = '1';
+                }, 300);
+            }
+
+            // Update Bio
+            if (typewriterElement) {
+                typewriterElement.textContent = bioFinance;
+            }
+
+        } else {
+            document.body.removeAttribute('data-theme');
+            if (modeToggleContainer) modeToggleContainer.classList.remove('finance-active');
+
+            if (modeCyber) modeCyber.classList.add('active');
+            if (modeFinance) modeFinance.classList.remove('active');
+
+            // Canvas handled by CSS
+            if (canvas) canvas.style.opacity = '1';
+
+            // Restore Cyber Status
+            const statusText = document.querySelector('.status-bar-text');
+            if (statusText) statusText.innerHTML = `SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [ GRANTED ] // IDENTITY: [ VERIFIED ]`;
+
+            // Dynamic Hero Content (Cyber)
+            if (heroName) heroName.innerHTML = `Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span>`;
+
+            if (heroSubtitle) {
+                heroSubtitle.style.transition = 'opacity 0.3s ease-in-out';
+                heroSubtitle.style.opacity = '0';
+                setTimeout(() => {
+                    heroSubtitle.textContent = "Cybersecurity Analyst";
+                    heroSubtitle.style.opacity = '1';
+                }, 300);
+            }
+
+            // Update Bio
+            if (typewriterElement) {
+                typewriterElement.textContent = bioCyber;
+            }
+        }
+
+        // Save preference
+        localStorage.setItem('portfolio-theme', theme);
+    }
+
+    // Event Listeners
+    if (modeToggleContainer) {
+        modeToggleContainer.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('portfolio-theme') || 'cyber';
+            const newTheme = currentTheme === 'cyber' ? 'finance' : 'cyber';
+            setTheme(newTheme);
+        });
+    }
+
+    // Load saved preference
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        // Default to Cyber
+        setTheme('cyber');
+    }
+
+
+    // ==========================================
+    // CONTACT BUTTON INTERACTION
+    // ==========================================
+    const contactBtn = document.getElementById('dynamic-contact-btn');
+    const contactReveal = document.getElementById('contact-reveal');
+    const CHARS = '!@#$%^&*()_+-=[]{}|;:,.<>?/1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    // Update button text based on mode immediately
+    function updateContactButtonText() {
+        if (!contactBtn) return;
+        const isFinance = document.body.getAttribute('data-theme') === 'finance';
+        const btnTextSpan = contactBtn.querySelector('.btn-text');
+
+        if (isFinance) {
+            // Check if already updated to avoid flicker
+            if (contactBtn.innerText.includes("View Contact Card")) return;
+
+            contactBtn.innerHTML = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> <span class="btn-text">View Contact Card</span>`;
+        } else {
+            if (contactBtn.innerText.includes("DECRYPT CONTACT")) return;
+            contactBtn.innerHTML = `<span class="btn-text">DECRYPT CONTACT</span>`;
+        }
+    }
+
+    // Observe body attribute changes to update button text dynamically
+    const themeObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === "attributes" && mutation.attributeName === "data-theme") {
+                updateContactButtonText();
+                // Hide reveal if theme changes to reset interaction
+                if (contactReveal) contactReveal.classList.remove('visible-reveal');
+                if (contactBtn) contactBtn.classList.remove('btn-hidden');
+                if (contactBtn) {
+                    contactBtn.style.opacity = '1';
+                    contactBtn.style.border = "";
+                    contactBtn.style.color = "";
+                }
+            }
+        });
+    });
+    themeObserver.observe(document.body, { attributes: true });
+
+    // Initialize text
+    updateContactButtonText();
+
+    // Interaction Click Handler
+    if (contactBtn) {
+        contactBtn.addEventListener('click', () => {
+            const isFinance = document.body.getAttribute('data-theme') === 'finance';
+
+            if (isFinance) {
+                // Finance Mode: Smooth Reveal
+                contactBtn.style.opacity = '0';
+                setTimeout(() => {
+                    contactBtn.classList.add('btn-hidden');
+                    contactReveal.classList.add('visible-reveal');
+                }, 300);
+            } else {
+                // Cyber Mode: Decrypt Animation
+                const originalText = "ACCESS GRANTED";
+                const btnText = contactBtn.querySelector('.btn-text');
+                let iterations = 0;
+                const interval = setInterval(() => {
+                    if (btnText) {
+                        btnText.innerText = originalText.split('')
+                            .map((letter, index) => {
+                                if (index < iterations) {
+                                    return originalText[index];
+                                }
+                                return CHARS[Math.floor(Math.random() * CHARS.length)];
+                            })
+                            .join('');
+                    }
+
+                    if (iterations >= originalText.length) {
+                        clearInterval(interval);
+                        // After decryption, show content
+                        setTimeout(() => {
+                            contactReveal.classList.add('visible-reveal');
+                            contactBtn.style.border = "1px solid #22c55e"; // Green
+                            contactBtn.style.color = "#22c55e";
+                        }, 500);
+                    }
+                    iterations += 1 / 2; // Speed control
+                }, 30);
+            }
         });
     }
 });
