@@ -161,6 +161,17 @@ body[data-theme="finance"] .typing-cursor::after {
     display: none !important;
 }
 
+/* Disable Glitch Effects in Finance Mode */
+body[data-theme="finance"] .logo .accent::before,
+body[data-theme="finance"] .logo .accent::after {
+    display: none !important;
+    animation: none !important;
+}
+
+body[data-theme="finance"] .logo .accent {
+    animation: none !important;
+}
+
 /* Service Cards Styling */
 .service-cards-container {
     display: grid;
