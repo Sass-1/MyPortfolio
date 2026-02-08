@@ -250,24 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modeFinance) modeFinance.classList.add('active');
             if (modeCyber) modeCyber.classList.remove('active');
 
-            // Update Status Text
-            const statusText = document.querySelector('.status-bar-text');
-            if (statusText) statusText.innerHTML = `MARKET STATUS: [ <span class="status-stable" style="color:#16a34a">BULLISH</span> ] // INDEX: [ SPX +1.2% ] // AUDIT: [ ONGOING ]`;
-
             // Canvas handled by CSS (display: none)
             if (canvas) canvas.style.opacity = '0';
 
             // Dynamic Hero Content (Finance)
             if (heroName) heroName.innerHTML = `Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span>`;
-
-            if (heroSubtitle) {
-                heroSubtitle.style.transition = 'opacity 0.3s ease-in-out';
-                heroSubtitle.style.opacity = '0';
-                setTimeout(() => {
-                    heroSubtitle.textContent = "Financial Audit Specialist";
-                    heroSubtitle.style.opacity = '1';
-                }, 300);
-            }
 
             // Update Bio
             if (typewriterElement) {
@@ -284,27 +271,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Canvas handled by CSS
             if (canvas) canvas.style.opacity = '1';
 
-            // Restore Cyber Status
-            const statusText = document.querySelector('.status-bar-text');
-            if (statusText) statusText.innerHTML = `SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [ GRANTED ] // IDENTITY: [ VERIFIED ]`;
-
             // Dynamic Hero Content (Cyber)
             if (heroName) heroName.innerHTML = `Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span>`;
-
-            if (heroSubtitle) {
-                heroSubtitle.style.transition = 'opacity 0.3s ease-in-out';
-                heroSubtitle.style.opacity = '0';
-                setTimeout(() => {
-                    heroSubtitle.textContent = "Cybersecurity Analyst";
-                    heroSubtitle.style.opacity = '1';
-                }, 300);
-            }
 
             // Update Bio
             if (typewriterElement) {
                 typewriterElement.textContent = bioCyber;
             }
         }
+
+
 
         // Save preference
         localStorage.setItem('portfolio-theme', theme);

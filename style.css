@@ -137,7 +137,85 @@ body[data-theme="finance"] .mode-toggle-container {
 body[data-theme="finance"] h1,
 body[data-theme="finance"] h2,
 body[data-theme="finance"] h3 {
-    color: #0f172a;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    /* Force Inter */
+}
+
+body[data-theme="finance"] .gradient-text {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    /* Navy to Blue */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Standard property */
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hide Cyber Elements in Finance Mode */
+body[data-theme="finance"] #matrix-canvas,
+body[data-theme="finance"] .scanline-overlay,
+body[data-theme="finance"] .background-mesh,
+body[data-theme="finance"] .status-dot,
+body[data-theme="finance"] .glitch-active,
+body[data-theme="finance"] .typing-cursor::after {
+    display: none !important;
+}
+
+/* Service Cards Styling */
+.service-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.service-card .icon-box {
+    color: #1e293b;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.service-card h4 {
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.service-card p {
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Adjust Avatar in Finance Mode */
+body[data-theme="finance"] .photo-placeholder {
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="finance"] .scan-line {
+    display: none;
 }
 
 body[data-theme="finance"] .gradient-text {

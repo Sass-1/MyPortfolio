@@ -30,8 +30,10 @@
     <canvas id="matrix-canvas"></canvas>
 
     <div class="status-bar-container">
-        <p class="status-bar-text">SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [ GRANTED ]
-            // IDENTITY: [ VERIFIED ]</p>
+        <p class="status-bar-text cyber-only">SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [
+            GRANTED ] // IDENTITY: [ VERIFIED ]</p>
+        <p class="status-bar-text finance-only" style="display: none; letter-spacing: 2px; font-weight: 600;">SYSTEM
+            STATUS: AUDIT_READY</p>
     </div>
 
     <nav class="navbar">
@@ -71,7 +73,9 @@
             <div class="hero-content">
                 <p class="status-badge"><span class="status-dot"></span> STATUS: ONLINE / SCANNING</p>
                 <h1 class="long-name">Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span></h1>
-                <p class="hero-subtitle">Cybersecurity Analyst</p>
+                <p class="hero-subtitle cyber-only">Cybersecurity Analyst</p>
+                <p class="hero-subtitle finance-only" style="display: none; color: #1e293b; font-weight: 500;">Financial
+                    Audit Specialist</p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn-primary">View Operations</a>
                     <a href="#contact" class="btn-secondary">Initiate Handshake</a>
@@ -124,16 +128,69 @@
                         <span class="tag">Wireshark</span>
                     </div>
                 </div>
-                <div class="skill-category finance-only" style="display: none;">
-                    <h3>EXPERTISE FINANCIÈRE</h3>
-                    <div class="tags">
-                        <span class="tag">Analyse de données financières</span>
-                        <span class="tag">Veille documentaire législative</span>
-                        <span class="tag">Gestion de bases de données</span>
-                        <span class="tag">Conformité réglementaire</span>
+
+                <!-- Finance Mode Service Cards -->
+                <div class="service-cards-container finance-only" style="display: none;">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <!-- Icon: BarChart -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="12" y1="20" x2="12" y2="10"></line>
+                                <line x1="18" y1="20" x2="18" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="16"></line>
+                            </svg>
+                        </div>
+                        <h4>Analyse Financière</h4>
+                        <p>Audit de données et réconciliation bancaire automatisée.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <!-- Icon: ShieldCheck -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h4>Conformité & GRC</h4>
+                        <p>Respect des normes réglementaires et gestion des risques.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <!-- Icon: FileSearch -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Veille Documentaire</h4>
+                        <p>Suivi législatif et analyse d'impact réglementaire.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <!-- Icon: Database -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h4>Gestion de Données</h4>
+                        <p>Organisation et sécurisation des bases de données critiques.</p>
                     </div>
                 </div>
-                <div class="skill-category">
+
+                <div class="skill-category cyber-only">
                     <h3>AUDIT & COMPLIANCE</h3>
                     <div class="tags">
                         <span class="tag" style="border-color: var(--accent-secondary)">Financial Data
