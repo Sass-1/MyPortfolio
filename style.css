@@ -111,44 +111,164 @@ body {
 
 /* Background Logic */
 body[data-theme="finance"] {
-    background-color: #f8fafc;
-    /* Very light slate/white */
-    color: #1e293b;
-    /* Dark text for contrast */
+    background-color: #F4F7F9;
+    /* Textured Paper */
+    color: #003366;
+    /* Prussian Blue */
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23C5A059' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
 }
 
 body[data-theme="finance"] .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    /* Matte Gold border */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 body[data-theme="finance"] .glass-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-    border-color: #3b82f6;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    border-color: #C5A059;
+    transform: none;
+    /* Instant transition requested */
+    transition: none;
 }
 
 body[data-theme="finance"] .mode-toggle-container {
-    background: #ffffff;
-    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: #003366;
+    border: 1px solid #C5A059;
 }
 
 body[data-theme="finance"] h1,
 body[data-theme="finance"] h2,
-body[data-theme="finance"] h3 {
-    color: #1e293b;
-    font-family: 'Inter', sans-serif;
-    /* Force Inter */
+body[data-theme="finance"] h3,
+body[data-theme="finance"] h4,
+body[data-theme="finance"] h5,
+body[data-theme="finance"] h6,
+body[data-theme="finance"] .section-title {
+    color: #003366;
+    font-family: 'Libre Baskerville', serif;
 }
 
 body[data-theme="finance"] .gradient-text {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    /* Navy to Blue */
+    background: linear-gradient(135deg, #003366, #C5A059);
+    /* Prussian to Gold */
     -webkit-background-clip: text;
     background-clip: text;
-    /* Standard property */
     -webkit-text-fill-color: transparent;
+}
+
+/* Buttons in Finance Mode */
+body[data-theme="finance"] .btn-primary {
+    background: #003366;
+    border: 1px solid #C5A059;
+    color: #C5A059;
+    box-shadow: none;
+    transition: none;
+    /* Instant */
+}
+
+body[data-theme="finance"] .btn-primary:hover {
+    background: #C5A059;
+    color: #003366;
+}
+
+/* Asset Table Styling */
+body[data-theme="finance"] .asset-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+body[data-theme="finance"] .asset-table th {
+    text-align: left;
+    border-bottom: 2px solid #C5A059;
+    padding: 8px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #003366;
+    text-transform: uppercase;
+}
+
+body[data-theme="finance"] .asset-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+    color: #334155;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+}
+
+body[data-theme="finance"] .asset-table .asset-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+}
+
+body[data-theme="finance"] .trend-up {
+    color: #15803d;
+    font-weight: 600;
+}
+
+body[data-theme="finance"] .trend-steady {
+    color: #64748b;
+}
+
+/* Financial Chart Styling */
+body[data-theme="finance"] .chart-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+body[data-theme="finance"] .donut-chart {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(#003366 0% 40%,
+            #C5A059 40% 70%,
+            #94a3b8 70% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="finance"] .donut-chart::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+body[data-theme="finance"] .chart-center {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    color: #003366;
+    display: flex;
+    flex-direction: column;
+}
+
+body[data-theme="finance"] .chart-value {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+body[data-theme="finance"] .chart-label {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: #C5A059;
+}
+
+body[data-theme="finance"] p,
+body[data-theme="finance"] .service-card p {
+    font-family: 'Inter', sans-serif;
+    /* Clean sans for body */
+    color: #334155;
 }
 
 /* Hide Cyber Elements in Finance Mode */
@@ -157,7 +277,8 @@ body[data-theme="finance"] .scanline-overlay,
 body[data-theme="finance"] .background-mesh,
 body[data-theme="finance"] .status-dot,
 body[data-theme="finance"] .glitch-active,
-body[data-theme="finance"] .typing-cursor::after {
+body[data-theme="finance"] .typing-cursor::after,
+body[data-theme="finance"] .data-stream-background {
     display: none !important;
 }
 
@@ -172,7 +293,81 @@ body[data-theme="finance"] .logo .accent {
     animation: none !important;
 }
 
-/* Service Cards Styling */
+/* Guilloche Pattern Background */
+.finance-bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background-color: #FDFDFD;
+    background-image:
+        radial-gradient(circle at 50% 50%, transparent 0%, transparent 45%, rgba(212, 175, 55, 0.03) 46%, rgba(212, 175, 55, 0.03) 50%, transparent 51%),
+        repeating-linear-gradient(45deg, rgba(0, 33, 71, 0.02) 0px, rgba(0, 33, 71, 0.02) 1px, transparent 1px, transparent 10px);
+    pointer-events: none;
+}
+
+/* Finance Ticker */
+.finance-ticker-container {
+    width: 100%;
+    background: #002147;
+    /* Navy */
+    color: #D4AF37;
+    /* Gold */
+    overflow: hidden;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #D4AF37;
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker-move {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.ticker-item .up {
+    color: #4ade80;
+}
+
+.ticker-item .down {
+    color: #f87171;
+}
+
+.ticker-item .neutral {
+    color: #cbd5e1;
+}
+
+.ticker-item .low {
+    color: #4ade80;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Service Cards Styling - Satin Effect */
 .service-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -182,33 +377,57 @@ body[data-theme="finance"] .logo .accent {
 
 .service-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    /* Gold border */
+    border-radius: 4px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Satin Sheen Interaction */
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+.service-card:hover::after {
+    left: 150%;
+    transition: left 0.7s;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-color: #cbd5e1;
+    border-color: #D4AF37;
 }
 
 .service-card .icon-box {
-    color: #1e293b;
+    color: #D4AF37;
+    /* Gold Icons */
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
 }
 
 .service-card h4 {
-    color: #1e293b;
-    font-family: 'Inter', sans-serif;
+    color: #002147;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
 }
 
 .service-card p {
@@ -220,7 +439,7 @@ body[data-theme="finance"] .logo .accent {
 
 /* Adjust Avatar in Finance Mode */
 body[data-theme="finance"] .photo-placeholder {
-    border: 2px solid #e2e8f0;
+    border: 2px solid #D4AF37;
     background: #ffffff;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -229,35 +448,16 @@ body[data-theme="finance"] .scan-line {
     display: none;
 }
 
-body[data-theme="finance"] .gradient-text {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-body[data-theme="finance"] .finance-mode-bg {
-    display: block;
-}
-
-body[data-theme="finance"] #matrix-canvas {
-    display: none !important;
-}
-
-/* Finance Mode Background Watermark */
-.finance-mode-bg {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
-    background-image:
-        linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)),
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 90 L30 70 L50 80 L70 50 L90 60' stroke='%23cbd5e1' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-    background-size: cover, 200px 200px;
-    opacity: 0.5;
-    pointer-events: none;
+left: 0;
+width: 100vw;
+height: 100vh;
+z-index: -2;
+background-image: linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)),
+url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 90 L30 70 L50 80 L70 50 L90 60' stroke='%23cbd5e1' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+background-size: cover,
+200px 200px;
+opacity: 0.5;
+pointer-events: none;
 }
 
 /* Utilities for toggling */

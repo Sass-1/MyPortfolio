@@ -241,11 +241,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const bioCyber = "Focus on offensive security operations, penetration testing, and infrastructure resilience analysis. Specialized in PhishDetector development and network reconnaissance.";
     const bioFinance = "Dedicated to financial integrity, regulatory compliance (ECC), and governance auditing. Applying rigorous analytical methodology to detect fraud and ensure data accuracy.";
 
+    // Finance Ticker Animation
+    function animateFinanceNumbers() {
+        const counters = document.querySelectorAll('.chart-value');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            if (!target) return;
+
+            const duration = 2000; // ms
+            const start = 0;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Ease out quart
+                const ease = 1 - Math.pow(1 - progress, 4);
+
+                const current = start + (target - start) * ease;
+                counter.innerText = current.toFixed(1);
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toFixed(1);
+                }
+            }
+            requestAnimationFrame(update);
+        });
+    }
+
     // Function to set theme
     function setTheme(theme) {
         if (theme === 'finance') {
             document.body.setAttribute('data-theme', 'finance');
             if (modeToggleContainer) modeToggleContainer.classList.add('finance-active');
+
+            // Trigger animation
+            setTimeout(animateFinanceNumbers, 300); // Slight delay for transition
 
             if (modeFinance) modeFinance.classList.add('active');
             if (modeCyber) modeCyber.classList.remove('active');

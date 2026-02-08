@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="background-mesh"></div>
+    <div class="finance-bg-pattern finance-only"></div>
     <div class="scanline-overlay"></div>
     <div class="data-stream-background">
         <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -32,8 +33,19 @@
     <div class="status-bar-container">
         <p class="status-bar-text cyber-only">SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [
             GRANTED ] // IDENTITY: [ VERIFIED ]</p>
-        <p class="status-bar-text finance-only" style="display: none; letter-spacing: 2px; font-weight: 600;">SYSTEM
-            STATUS: AUDIT_READY</p>
+
+        <!-- Finance Ticker -->
+        <div class="finance-ticker-container finance-only">
+            <div class="ticker-wrap">
+                <div class="ticker-move">
+                    <div class="ticker-item">CORRUPTION_INDEX: <span class="down">-2.4%</span></div>
+                    <div class="ticker-item">TRANSPARENCY_SCORE: <span class="up">+15%</span></div>
+                    <div class="ticker-item">AUDIT_COMPLETION: <span class="neutral">98%</span></div>
+                    <div class="ticker-item">RISK_LEVEL: <span class="low">LOW</span></div>
+                    <div class="ticker-item">REGULATORY_COMPLIANCE: <span class="up">PASSED</span></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <nav class="navbar">
@@ -100,7 +112,7 @@
                 </div>
                 <!-- Professional Photo Section -->
                 <div class="about-visual">
-                    <div class="profile-photo-container">
+                    <div class="profile-photo-container cyber-only">
                         <div class="photo-placeholder">
                             <!-- User SVG -->
                             <svg viewBox="0 0 24 24" width="60" height="60" stroke="#94a3b8" stroke-width="1.5"
@@ -111,13 +123,33 @@
                         </div>
                         <div class="scan-line"></div>
                     </div>
+
+                    <!-- Finance: Financial Chart Visual -->
+                    <div class="financial-chart-visual finance-only" style="display: none;">
+                        <!-- CSS-only Pie/Donut Chart representation -->
+                        <div class="chart-container">
+                            <div class="donut-chart">
+                                <div class="slice" style="--percent: 40; --color: #003366;"></div>
+                                <div class="slice" style="--percent: 30; --color: #C5A059;"></div>
+                                <div class="slice" style="--percent: 30; --color: #8899A6;"></div>
+                                <div class="chart-center">
+                                    <span class="chart-value" data-target="98.6">0.0</span>
+                                    <span class="chart-label">INDEX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Skills list section -->
         <section id="skills" class="section-container">
-            <h2 class="section-title"><span class="mono">CAPABILITIES</span></h2>
+            <h2 class="section-title">
+                <span class="mono cyber-only">CAPABILITIES</span>
+                <span class="finance-only" style="display: none;">ASSET REPORT</span>
+            </h2>
             <div class="skills-grid">
+                <!-- Cyber Skills -->
                 <div class="skill-category cyber-only">
                     <h3>OFFENSIVE & DEFENSIVE</h3>
                     <div class="tags">
@@ -127,6 +159,72 @@
                         <span class="tag">Metasploit</span>
                         <span class="tag">Wireshark</span>
                     </div>
+                </div>
+
+                <!-- Finance: Asset Report Tables -->
+                <div class="asset-category finance-only" style="display: none;">
+                    <h3>Technical Capital</h3>
+                    <table class="asset-table">
+                        <thead>
+                            <tr>
+                                <th>ASSET CLASS</th>
+                                <th>VALUATION</th>
+                                <th>TREND</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Systems Auditing</td>
+                                <td>Distinguished</td>
+                                <td class="trend-up">▲ 12%</td>
+                            </tr>
+                            <tr>
+                                <td>Regulatory Compliance</td>
+                                <td>Certified</td>
+                                <td class="trend-steady">► 0%</td>
+                            </tr>
+                            <tr>
+                                <td>Risk Assessment</td>
+                                <td>High Yield</td>
+                                <td class="trend-up">▲ 5%</td>
+                            </tr>
+                            <tr>
+                                <td>Forensic Analysis</td>
+                                <td>Standard</td>
+                                <td class="trend-up">▲ 8%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="asset-category finance-only" style="display: none;">
+                    <h3>Development Equity</h3>
+                    <table class="asset-table">
+                        <thead>
+                            <tr>
+                                <th>ASSET CLASS</th>
+                                <th>VALUATION</th>
+                                <th>TREND</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Python Automation</td>
+                                <td>Liquid</td>
+                                <td class="trend-up">▲ 15%</td>
+                            </tr>
+                            <tr>
+                                <td>C++ Algorithms</td>
+                                <td>Fixed Asset</td>
+                                <td class="trend-steady">► 0%</td>
+                            </tr>
+                            <tr>
+                                <td>Data Analysis</td>
+                                <td>High Growth</td>
+                                <td class="trend-up">▲ 20%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- Finance Mode Service Cards -->
