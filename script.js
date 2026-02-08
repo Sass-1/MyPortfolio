@@ -15,34 +15,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('matrix-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+
+        let width, height, columns;
+        const fontSize = 16;
+        const rainDrops = [];
 
         const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
         const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         const nums = '0123456789';
         const alphabet = katakana + latin + nums;
 
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
+        const initMatrix = () => {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
 
-        const rainDrops = [];
-        for (let x = 0; x < columns; x++) {
-            rainDrops[x] = 1;
-        }
+            const newColumns = Math.floor(width / fontSize);
+
+            for (let x = 0; x < newColumns; x++) {
+                if (rainDrops[x] === undefined) {
+                    rainDrops[x] = 1;
+                }
+            }
+
+            columns = newColumns;
+        };
+
+        initMatrix();
 
         const draw = () => {
             ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, width, height);
 
             ctx.fillStyle = '#06b6d4'; // Theme Cyan
             ctx.font = fontSize + 'px monospace';
 
-            for (let i = 0; i < rainDrops.length; i++) {
+            for (let i = 0; i < columns; i++) {
                 const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
                 ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
 
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                if (rainDrops[i] * fontSize > height && Math.random() > 0.975) {
                     rainDrops[i] = 0;
                 }
                 rainDrops[i]++;
@@ -52,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 30);
 
         window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            initMatrix();
         });
     }
 
