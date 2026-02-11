@@ -107,111 +107,251 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Background Logic */
+/* =========================================
+   FINANCE MODE - LUXURY ANNUAL REPORT
+   ========================================= */
+
 body[data-theme="finance"] {
-    background-color: #F4F7F9;
-    /* Textured Paper */
-    color: #003366;
-    /* Prussian Blue */
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23C5A059' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+    /* Pure White / Pearl Grey Background */
+    background-color: #FDFDFD;
+    background-image: none;
+    /* Remove texture for cleaner look */
+    color: #333333;
+    /* Dark Grey for text */
 }
 
-body[data-theme="finance"] .glass-card {
-    background: #ffffff;
-    border: 1px solid rgba(197, 160, 89, 0.3);
-    /* Matte Gold border */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-body[data-theme="finance"] .glass-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-    border-color: #C5A059;
-    transform: none;
-    /* Instant transition requested */
-    transition: none;
-}
-
-body[data-theme="finance"] .mode-toggle-container {
-    background: #003366;
-    border: 1px solid #C5A059;
-}
-
+/* Typography - Classical Serif */
 body[data-theme="finance"] h1,
 body[data-theme="finance"] h2,
 body[data-theme="finance"] h3,
 body[data-theme="finance"] h4,
 body[data-theme="finance"] h5,
 body[data-theme="finance"] h6,
-body[data-theme="finance"] .section-title {
-    color: #003366;
-    font-family: 'Libre Baskerville', serif;
+body[data-theme="finance"] .section-title,
+body[data-theme="finance"] p,
+body[data-theme="finance"] li,
+body[data-theme="finance"] a {
+    font-family: 'Playfair Display', serif;
+    /* Primary Serif */
 }
 
-body[data-theme="finance"] .gradient-text {
-    background: linear-gradient(135deg, #003366, #C5A059);
-    /* Prussian to Gold */
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+body[data-theme="finance"] .section-title span.mono {
+    font-family: 'Playfair Display', serif !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #002147;
+    /* Navy Blue Underline */
+    padding-bottom: 10px;
+    display: inline-block;
+    color: #002147;
+}
+
+/* Accent Colors */
+body[data-theme="finance"] {
+    --finance-navy: #002147;
+    --finance-gold: #D4AF37;
+    --finance-text: #333333;
+    --finance-border: #002147;
+}
+
+/* Glass Card Override -> clean white paper look */
+body[data-theme="finance"] .glass-card {
+    background: #FFFFFF;
+    border: 1px solid var(--finance-navy);
+    /* Fine Navy Border */
+    box-shadow: 0 10px 30px -10px rgba(0, 33, 71, 0.1);
+    /* Soft Navy Shadow */
+    border-radius: 2px;
+    /* Sharper corners for documents */
+    padding: 2.5rem;
+}
+
+body[data-theme="finance"] .glass-card:hover {
+    box-shadow: 0 15px 35px -5px rgba(0, 33, 71, 0.15);
+    border-color: var(--finance-gold);
+    /* Gold on hover */
+    transform: translateY(-2px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Mode Switcher Adaptation */
+body[data-theme="finance"] .mode-toggle-container {
+    background: #FFFFFF;
+    border: 1px solid var(--finance-navy);
+}
+
+body[data-theme="finance"] .slider-accent {
+    background: var(--finance-navy);
+}
+
+body[data-theme="finance"] .mode-option.active {
+    color: #FFFFFF;
+    /* Text inside slider */
+}
+
+body[data-theme="finance"] .mode-option:not(.active) {
+    color: var(--finance-navy);
+}
+
+/* Headings */
+body[data-theme="finance"] h1,
+body[data-theme="finance"] h2,
+body[data-theme="finance"] h3 {
+    color: var(--finance-navy);
+    font-weight: 700;
 }
 
 /* Buttons in Finance Mode */
 body[data-theme="finance"] .btn-primary {
-    background: #003366;
-    border: 1px solid #C5A059;
-    color: #C5A059;
+    background: var(--finance-navy);
+    border: 1px solid var(--finance-navy);
+    color: #FFFFFF;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     box-shadow: none;
-    transition: none;
-    /* Instant */
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 body[data-theme="finance"] .btn-primary:hover {
-    background: #C5A059;
-    color: #003366;
+    background: #FFFFFF;
+    color: var(--finance-navy);
+    border-color: var(--finance-navy);
 }
 
-/* Asset Table Styling */
+body[data-theme="finance"] .btn-secondary {
+    border: 1px solid var(--finance-navy);
+    color: var(--finance-navy);
+    font-family: 'Playfair Display', serif;
+    background: transparent;
+    border-radius: 2px;
+}
+
+body[data-theme="finance"] .btn-secondary:hover {
+    background: rgba(0, 33, 71, 0.05);
+}
+
+/* Navbar */
+body[data-theme="finance"] .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid var(--finance-navy);
+}
+
+body[data-theme="finance"] .nav-links a {
+    color: var(--finance-navy);
+    font-family: 'Playfair Display', serif;
+}
+
+body[data-theme="finance"] .nav-links a:hover,
+body[data-theme="finance"] .nav-links a.active {
+    color: var(--finance-gold);
+    text-shadow: none;
+    border-bottom-color: var(--finance-gold);
+}
+
+/* Status Bar / Ticker */
+body[data-theme="finance"] .finance-ticker-container {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--finance-navy);
+    color: var(--finance-navy);
+    font-family: 'Playfair Display', serif;
+    /* Serif for ticker too? Or keep Mono for data? User said "Serif classique pour tout le corps de texte" but keeping numbers readable is good. Let's stick to serif for elegance */
+}
+
+body[data-theme="finance"] .finance-ticker-container .ticker-item {
+    font-weight: 500;
+}
+
+
+/* Executive Summary (Profile) */
+body[data-theme="finance"] .about-card {
+    border: 3px double var(--finance-gold);
+    /* Double Gold Border */
+    padding: 3rem;
+    background: #FFFFFF;
+    position: relative;
+}
+
+body[data-theme="finance"] .about-card::before {
+    content: "EXECUTIVE SUMMARY";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    padding: 0 1rem;
+    color: var(--finance-navy);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* Asset List Styling (Skills) */
+body[data-theme="finance"] .asset-category h3 {
+    text-align: center;
+    border-bottom: 1px solid var(--finance-gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
 body[data-theme="finance"] .asset-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
+    /* Serif for table */
 }
 
 body[data-theme="finance"] .asset-table th {
     text-align: left;
-    border-bottom: 2px solid #C5A059;
-    padding: 8px;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.85rem;
+    border-bottom: 2px solid var(--finance-navy);
+    padding: 12px 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
     letter-spacing: 1px;
-    color: #003366;
+    color: var(--finance-navy);
     text-transform: uppercase;
 }
 
 body[data-theme="finance"] .asset-table td {
-    padding: 10px 8px;
-    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
-    color: #334155;
-    font-variant-numeric: tabular-nums;
-    font-size: 0.95rem;
+    padding: 15px 8px;
+    border-bottom: 1px solid rgba(0, 33, 71, 0.1);
+    /* Light Navy separator */
+    color: #333333;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+body[data-theme="finance"] .asset-table tr:last-child td {
+    border-bottom: none;
 }
 
 body[data-theme="finance"] .asset-table .asset-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    /* Keep it serif for consistency */
+    font-weight: 700;
+    color: var(--finance-navy);
 }
 
 body[data-theme="finance"] .trend-up {
     color: #15803d;
-    font-weight: 600;
+    /* Green */
+    font-size: 0.85rem;
 }
 
 body[data-theme="finance"] .trend-steady {
     color: #64748b;
+    font-size: 0.85rem;
 }
+
 
 /* Financial Chart Styling */
 body[data-theme="finance"] .chart-container {
@@ -269,6 +409,41 @@ body[data-theme="finance"] .service-card p {
     font-family: 'Inter', sans-serif;
     /* Clean sans for body */
     color: #334155;
+}
+
+/* Finance Only Overrides */
+body[data-theme="finance"] .mono {
+    font-family: 'Playfair Display', serif !important;
+    letter-spacing: 0.5px;
+}
+
+body[data-theme="finance"] .project-card {
+    border-left: 4px solid var(--finance-navy);
+    /* Case Study Accent */
+    background: #FFFFFF;
+    margin-bottom: 2rem;
+}
+
+body[data-theme="finance"] .project-card h3 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    /* Smaller, more formal */
+    border-bottom: 1px solid rgba(0, 33, 71, 0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--finance-navy);
+}
+
+body[data-theme="finance"] .project-tech span {
+    background: transparent;
+    border: 1px solid var(--finance-navy);
+    color: var(--finance-navy);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 0;
+    /* Square tags */
 }
 
 /* Hide Cyber Elements in Finance Mode */
