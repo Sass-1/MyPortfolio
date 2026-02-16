@@ -272,6 +272,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Asset Graph Animation
+    function animateAssetGraph() {
+        const bars = document.querySelectorAll('.asset-bar-fill');
+        bars.forEach(bar => {
+            const width = bar.style.getPropertyValue('--width');
+            // Reset first to allow re-animation
+            bar.style.width = '0';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 100);
+        });
+    }
+
     // Function to set theme
     function setTheme(theme) {
         if (theme === 'finance') {
@@ -280,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Trigger animation
             setTimeout(animateFinanceNumbers, 300); // Slight delay for transition
+            setTimeout(animateAssetGraph, 400); // Trigger graph animation
 
             if (modeFinance) modeFinance.classList.add('active');
             if (modeCyber) modeCyber.classList.remove('active');

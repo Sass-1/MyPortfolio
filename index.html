@@ -161,65 +161,61 @@
                     </div>
                 </div>
 
-                <!-- Finance: Asset Report Tables -->
+                <!-- Finance: Asset Performance Graph -->
                 <div class="asset-category finance-only" style="display: none;">
-                    <h3>Bases de Données & Analyse</h3>
-                    <table class="asset-table">
-                        <thead>
-                            <tr>
-                                <th>ACTIF</th>
-                                <th>NIVEAU</th>
-                                <th>IMPACT</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SQL / NoSQL Management</td>
-                                <td>Expert</td>
-                                <td class="trend-up">▲ Optimisation</td>
-                            </tr>
-                            <tr>
-                                <td>Data Warehousing</td>
-                                <td>Avancé</td>
-                                <td class="trend-steady">► Structuration</td>
-                            </tr>
-                            <tr>
-                                <td>Financial Modeling (Excel/VBA)</td>
-                                <td>Expert</td>
-                                <td class="trend-up">▲ Rentabilité</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="asset-category finance-only" style="display: none;">
-                    <h3>Gestion Administrative & Conformité</h3>
-                    <table class="asset-table">
-                        <thead>
-                            <tr>
-                                <th>COMPÉTENCE</th>
-                                <th>CERTIFICATION</th>
-                                <th>STATUT</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Audit Réglementaire (ECC)</td>
-                                <td>En cours</td>
-                                <td class="trend-up">▲ Conforme</td>
-                            </tr>
-                            <tr>
-                                <td>Gestion des Risques (GRC)</td>
-                                <td>Certifié</td>
-                                <td class="trend-steady">► Maîtrisé</td>
-                            </tr>
-                            <tr>
-                                <td>Rédaction de Rapports</td>
-                                <td>Professionnel</td>
-                                <td class="trend-up">▲ Standardisé</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h3>PORTFOLIO PERFORMANCE</h3>
+                    <div class="asset-graph-container">
+                        <!-- Asset 1 -->
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">SQL / NoSQL Management</span>
+                                <span class="asset-value">98.4 <span class="trend-up">▲ 2.4%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 98%;"></div>
+                            </div>
+                        </div>
+                        <!-- Asset 2 -->
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Financial Modeling (Excel/VBA)</span>
+                                <span class="asset-value">96.8 <span class="trend-up">▲ 1.8%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 96%;"></div>
+                            </div>
+                        </div>
+                        <!-- Asset 3 -->
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Data Warehousing</span>
+                                <span class="asset-value">92.0 <span class="trend-steady">► 0.0%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 92%;"></div>
+                            </div>
+                        </div>
+                        <!-- Asset 4 -->
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Reg. Compliance (ECC)</span>
+                                <span class="asset-value">95.5 <span class="trend-up">▲ 3.1%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 95%;"></div>
+                            </div>
+                        </div>
+                        <!-- Asset 5 -->
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Risk Management (GRC)</span>
+                                <span class="asset-value">99.0 <span class="trend-up">▲ 0.5%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 99%;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Finance Mode Service Cards (Optional - keeping existing if needed, but reducing clutter for 'Annual Report' vibe? 
@@ -279,7 +275,7 @@
         <section id="projects" class="section-container">
             <h2 class="section-title">
                 <span class="mono cyber-only">PROJECTS</span>
-                <span class="finance-only" style="display: none;">ÉTUDES DE CAS</span>
+                <span class="mono finance-only" style="display: none;">MARKET ANALYSIS</span>
             </h2>
             <div class="projects-grid">
                 <!-- Project 1 (Cyber) -->
@@ -418,85 +414,84 @@
                 <!-- Finance Only Projects -->
 
                 <!-- CASE STUDY: Task App -->
-                <article class="project-card glass-card finance-only" style="display: none;">
-                    <div class="project-header">
-                        <h3 class="mono">Optimisation des Processus : App de Gestion</h3>
-                        <span class="icon">
-                            <!-- Document / Chart Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </span>
+                <!-- STOCK 1: Task App -->
+                <article class="stock-card finance-only" style="display: none;">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: OPS-OPT</span>
+                        <span class="ticker-change positive">▲ +30.0%</span>
                     </div>
-                    <div
-                        style="font-family: 'Playfair Display', serif; color: var(--finance-navy); font-weight: 600; margin-bottom: 0.5rem;">
-                        ÉTUDE DE CAS</div>
-                    <p>Conception d'une solution centralisée pour réduire la redondance des tâches administratives.
-                        Résultat : Amélioration de 30% de l'efficacité opérationnelle.</p>
-                    <div class="project-tech">
-                        <span>Analyse de Flux</span><span>Automatisation</span><span>Rentabilité</span>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Optimisation des Processus</h3>
+                        <p class="stock-desc">Conception d'une solution centralisée pour réduire la redondance
+                            administrative.</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">ROI</span>
+                                <span class="meta-value">High</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">EFFICIENCY</span>
+                                <span class="meta-value">Optimal</span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="link-arrow"
-                        style="margin-top:1rem; display:inline-block; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Consulter
-                        le Rapport -></span>
+                    <div class="stock-footer">
+                        <span class="link-arrow">View Analysis -></span>
+                    </div>
                 </article>
 
-                <!-- Audit Project -->
-                <article class="project-card glass-card finance-only" style="display: none;">
-                    <div class="project-header">
-                        <h3 class="mono">Audit de Gouvernance & Conformité</h3>
-                        <span class="icon">
-                            <!-- Stamp/Seal Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                <path d="m9 12 2 2 4-4"></path>
-                            </svg>
-                        </span>
+                <!-- STOCK 2: Audit Project -->
+                <article class="stock-card finance-only" style="display: none;">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: GRC-AUD</span>
+                        <span class="ticker-change positive">▲ COMPLIANT</span>
                     </div>
-                    <p>Mission de préparation à l'audit réglementaire (ECC). Cartographie des risques et mise en
-                        conformité des procédures internes.</p>
-                    <div class="project-tech">
-                        <span>GRC</span><span>Normes ISO</span><span>Audit Interne</span>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Audit de Gouvernance</h3>
+                        <p class="stock-desc">Cartographie des risques et mise en conformité réglementaire (ECC).</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">RISK</span>
+                                <span class="meta-value low-risk">Mitigated</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">STATUS</span>
+                                <span class="meta-value">Verified</span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="link-arrow"
-                        style="margin-top:1rem; display:inline-block; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Accéder
-                        au Dossier -></span>
+                    <div class="stock-footer">
+                        <span class="link-arrow">View Report -></span>
+                    </div>
                 </article>
 
-                <!-- Financial Automation -->
-                <article class="project-card glass-card finance-only" style="display: none;">
-                    <div class="project-header">
-                        <h3 class="mono">Automatisation de Réconciliation Bancaire</h3>
-                        <span class="icon">
-                            <!-- Trend/Graph Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                <polyline points="17 6 23 6 23 12"></polyline>
-                            </svg>
-                        </span>
+                <!-- STOCK 3: Financial Automation -->
+                <article class="stock-card finance-only" style="display: none;">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: PY-AUTO</span>
+                        <span class="ticker-change positive">▲ +40.0%</span>
                     </div>
-                    <p>Développement de scripts Python pour automatiser le rapprochement bancaire, réduisant le temps de
-                        traitement manuel de 40%.</p>
-                    <div class="project-tech">
-                        <span>Python</span><span>Pandas</span><span>Fiabilité des Données</span>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Réconciliation Automatisée</h3>
+                        <p class="stock-desc">Scripting Python pour le rapprochement bancaire et la fiabilité des
+                            données.</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">SPEED</span>
+                                <span class="meta-value">max_vel</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">ACCURACY</span>
+                                <span class="meta-value">99.9%</span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="link-arrow"
-                        style="margin-top:1rem; display:inline-block; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Voir
-                        les Métriques -></span>
+                    <div class="stock-footer">
+                        <span class="link-arrow">View Metrics -></span>
+                    </div>
                 </article>
             </div>
-            </article>
-            </div>
+
         </section>
 
 

@@ -296,64 +296,60 @@ body[data-theme="finance"] .about-card::before {
     font-size: 0.9rem;
 }
 
-/* Asset List Styling (Skills) */
-body[data-theme="finance"] .asset-category h3 {
-    text-align: center;
-    border-bottom: 1px solid var(--finance-gold);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    font-weight: 600;
-}
-
-body[data-theme="finance"] .asset-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Asset Graph Styling */
+body[data-theme="finance"] .asset-graph-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 1rem;
+}
+
+body[data-theme="finance"] .asset-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+body[data-theme="finance"] .asset-info {
+    display: flex;
+    justify-content: space-between;
     font-family: 'Playfair Display', serif;
-    /* Serif for table */
-}
-
-body[data-theme="finance"] .asset-table th {
-    text-align: left;
-    border-bottom: 2px solid var(--finance-navy);
-    padding: 12px 8px;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    color: var(--finance-navy);
-    text-transform: uppercase;
-}
-
-body[data-theme="finance"] .asset-table td {
-    padding: 15px 8px;
-    border-bottom: 1px solid rgba(0, 33, 71, 0.1);
-    /* Light Navy separator */
-    color: #333333;
-    font-size: 1rem;
-    vertical-align: middle;
-}
-
-body[data-theme="finance"] .asset-table tr:last-child td {
-    border-bottom: none;
-}
-
-body[data-theme="finance"] .asset-table .asset-value {
-    font-family: 'Playfair Display', serif;
-    /* Keep it serif for consistency */
     font-weight: 700;
     color: var(--finance-navy);
 }
 
+body[data-theme="finance"] .asset-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+body[data-theme="finance"] .asset-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 33, 71, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+body[data-theme="finance"] .asset-bar-fill {
+    height: 100%;
+    width: 0;
+    /* Animated via JS */
+    background: linear-gradient(90deg, #D4AF37, #F9A825);
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 body[data-theme="finance"] .trend-up {
     color: #15803d;
-    /* Green */
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-left: 5px;
 }
 
 body[data-theme="finance"] .trend-steady {
     color: #64748b;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-left: 5px;
 }
 
 
@@ -472,7 +468,7 @@ body[data-theme="finance"] .logo .accent {
     animation: none !important;
 }
 
-/* Guilloche Pattern Background */
+/* Guilloche Pattern Background - Animated */
 .finance-bg-pattern {
     position: fixed;
     top: 0;
@@ -485,6 +481,134 @@ body[data-theme="finance"] .logo .accent {
         radial-gradient(circle at 50% 50%, transparent 0%, transparent 45%, rgba(212, 175, 55, 0.03) 46%, rgba(212, 175, 55, 0.03) 50%, transparent 51%),
         repeating-linear-gradient(45deg, rgba(0, 33, 71, 0.02) 0px, rgba(0, 33, 71, 0.02) 1px, transparent 1px, transparent 10px);
     pointer-events: none;
+    animation: bg-drift 60s linear infinite alternate;
+    background-size: 100% 100%, 20px 20px;
+}
+
+@keyframes bg-drift {
+    0% {
+        background-position: 50% 50%, 0 0;
+    }
+
+    100% {
+        background-position: 55% 55%, 10px 10px;
+    }
+}
+
+/* Stock Card Styling */
+body[data-theme="finance"] .stock-card {
+    background: #FFFFFF;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="finance"] .stock-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: var(--finance-gold);
+}
+
+body[data-theme="finance"] .stock-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--finance-navy);
+}
+
+body[data-theme="finance"] .stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+}
+
+body[data-theme="finance"] .ticker-symbol {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--finance-navy);
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+body[data-theme="finance"] .ticker-change {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+body[data-theme="finance"] .ticker-change.positive {
+    color: #16a34a;
+}
+
+body[data-theme="finance"] .stock-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--finance-navy);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+body[data-theme="finance"] .stock-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+body[data-theme="finance"] .stock-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+body[data-theme="finance"] .meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+body[data-theme="finance"] .meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+body[data-theme="finance"] .meta-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+body[data-theme="finance"] .stock-footer {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+body[data-theme="finance"] .link-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--finance-gold);
+    text-decoration: none;
+    font-weight: 700;
 }
 
 /* Finance Ticker */
@@ -636,7 +760,8 @@ body[data-theme="finance"] .finance-only {
     display: block !important;
 }
 
-body[data-theme="finance"] .project-card.finance-only {
+body[data-theme="finance"] .project-card.finance-only,
+body[data-theme="finance"] .stock-card.finance-only {
     display: flex !important;
     /* Restore flex for project cards */
     flex-direction: column;
