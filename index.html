@@ -91,20 +91,80 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <p class="status-badge"><span class="status-dot"></span> STATUS: ONLINE / SCANNING</p>
-                <h1 class="long-name">Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span></h1>
-                <p class="hero-subtitle cyber-only">Cybersecurity Analyst</p>
-                <p class="hero-subtitle finance-only" style="display: none; color: #1e293b; font-weight: 500;">Financial
-                    Audit Specialist</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary" aria-label="View projects section">View Operations</a>
-                    <a href="#contact" class="btn-secondary" aria-label="Go to contact section">Initiate Handshake</a>
+                <!-- Cyber Mode Hero -->
+                <div class="cyber-hero">
+                    <p class="status-badge"><span class="status-dot"></span> STATUS: ONLINE / SCANNING</p>
+                    <h1 class="long-name">Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span></h1>
+                    <p class="hero-subtitle">Cybersecurity Analyst</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary" aria-label="View projects section">View Operations</a>
+                        <a href="#contact" class="btn-secondary" aria-label="Go to contact section">Initiate
+                            Handshake</a>
+                    </div>
+                </div>
+
+                <!-- Finance Mode Hero -->
+                <div class="finance-hero finance-only" style="display: none;">
+                    <div class="report-header">
+                        <div class="audit-badge">AUDITED & VERIFIED</div>
+                        <h1 class="report-name">Dülze Hkloë Sassie Shaikelta <br><span
+                                style="color: #D4AF37;">LOUIS</span></h1>
+                        <p class="report-subtitle">Financial Integrity & Risk Assessment Specialist</p>
+                    </div>
+                    <div class="finance-metrics-display">
+                        <div class="metric-box">
+                            <div class="metric-label">Compliance Rate</div>
+                            <div class="metric-value">98.6%</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 98.6%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Risk Level</div>
+                            <div class="metric-value" style="color: #16a34a;">LOW</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Certifications</div>
+                            <div class="metric-value">5+</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary" aria-label="View audit reports">View Reports</a>
+                        <a href="#contact" class="btn-secondary" aria-label="Request consultation">Request Audit</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section-container">
-            <h2 class="section-title"><span class="mono">WHOAMI</span></h2>
+            <h2 class="section-title"><span class="mono cyber-only">WHOAMI</span><span class="finance-only"
+                    style="display:none;">EXECUTIVE PROFILE</span></h2>
+
+            <!-- Finance: Certification Timeline -->
+            <div class="cert-timeline finance-only" style="display: none;">
+                <div class="timeline-item">
+                    <div class="timeline-marker">2023</div>
+                    <div class="timeline-content">
+                        <h4>Certified Compliance Officer</h4>
+                        <p>GRC Framework Specialization</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2024</div>
+                    <div class="timeline-content">
+                        <h4>Financial Audit Certification</h4>
+                        <p>ECC & Risk Assessment</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2025</div>
+                    <div class="timeline-content">
+                        <h4>Security Systems Auditor</h4>
+                        <p>Cybersecurity + Finance Integration</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="glass-card about-card">
                 <div class="about-text">
                     <p id="typewriter-text"></p>
@@ -502,7 +562,22 @@
 
         </section>
 
-
+        <!-- Interactive Games Section (Cyber Mode Only) -->
+        <section id="interactive" class="section-container cyber-only">
+            <h2 class="section-title"><span class="mono">INTERACTIVE PROJECTS</span></h2>
+            <div class="games-grid">
+                <!-- Game Card 1: Orange Invasion -->
+                <div class="game-card glass-game">
+                    <div class="game-image-placeholder">
+                        <img src="img/orange-invasion.png" alt="Orange Invasion Preview" class="game-demo-img">
+                    </div>
+                    <h3 class="game-title">ORANGE INVASION</h3>
+                    <p class="game-description">Defend against waves of cyber threats in this fast-paced arcade-style
+                        game. Test your reflexes and strategic thinking.</p>
+                    <button class="play-btn" onclick="alert('Orange Invasion Game - Coming Soon!')">PLAY</button>
+                </div>
+            </div>
+        </section>
 
         <section id="contact" class="section-container">
             <h2 class="section-title"><span class="mono">CONTACT</span></h2>

@@ -326,6 +326,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Animate metric bars in finance hero
+    function animateMetricBars() {
+        const bars = document.querySelectorAll('.metric-fill');
+        bars.forEach((bar, index) => {
+            const width = bar.style.width || '0%';
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 100 + (index * 200));
+        });
+    }
+
     // Function to set theme
     function setTheme(theme) {
         if (theme === 'finance') {
@@ -335,6 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Trigger animation
             setTimeout(animateFinanceNumbers, 300); // Slight delay for transition
             setTimeout(animateAssetGraph, 400); // Trigger graph animation
+            setTimeout(animateMetricBars, 500); // Animate metrics in hero
 
             if (modeFinance) modeFinance.classList.add('active');
             if (modeCyber) modeCyber.classList.remove('active');
