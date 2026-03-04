@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         initMatrix();
 
+        // Check for prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         const draw = () => {
             ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
             ctx.fillRect(0, 0, width, height);
@@ -62,7 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        setInterval(draw, 30);
+        // Use requestAnimationFrame instead of setInterval for better performance
+        if (!prefersReducedMotion) {
+            const animateMatrix = () => {
+                draw();
+                requestAnimationFrame(animateMatrix);
+            };
+            animateMatrix();
+        }
 
         window.addEventListener('resize', () => {
             initMatrix();
@@ -275,13 +285,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Asset Graph Animation
     function animateAssetGraph() {
         const bars = document.querySelectorAll('.asset-bar-fill');
-        bars.forEach(bar => {
+        bars.forEach((bar, index) => {
             const width = bar.style.getPropertyValue('--width');
             // Reset first to allow re-animation
             bar.style.width = '0';
+            // Stagger animations for visual effect
             setTimeout(() => {
                 bar.style.width = width;
-            }, 100);
+            }, 100 + (index * 150));
+        });
+    }
+
+    // Enhanced number counter animation with easing
+    function animateCounters() {
+        const counters = document.querySelectorAll('[data-target]');
+        counters.forEach(counter => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            if (!target || target === 0) return;
+
+            const duration = 2000; // ms
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Cubic ease-out for smooth deceleration
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const current = easeProgress * target;
+
+                counter.innerText = current.toFixed(1);
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toFixed(1);
+                }
+            }
+            requestAnimationFrame(update);
         });
     }
 
