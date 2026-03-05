@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Louis - Financial Audit Specialist & Risk Assessment Expert. Expert in GRC compliance, regulatory auditing, and financial integrity.">
+    <meta name="keywords" content="financial audit, GRC, compliance, risk management, accounting, ECC, governance">
+    <meta name="author" content="Louis">
+    <meta name="theme-color" content="#002147">
+    <title>Louis | Financial Audit Specialist</title>
+    <link rel="stylesheet" href="finance.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Guilloche Pattern Background -->
+    <div class="finance-bg-pattern"></div>
+
+    <!-- Finance Ticker Bar -->
+    <div class="status-bar-container">
+        <div class="finance-ticker-container">
+            <div class="ticker-wrap">
+                <div class="ticker-move">
+                    <div class="ticker-item">CORRUPTION_INDEX: <span class="down">-2.4%</span></div>
+                    <div class="ticker-item">TRANSPARENCY_SCORE: <span class="up">+15%</span></div>
+                    <div class="ticker-item">AUDIT_COMPLETION: <span class="neutral">98%</span></div>
+                    <div class="ticker-item">RISK_LEVEL: <span class="low">LOW</span></div>
+                    <div class="ticker-item">REGULATORY_COMPLIANCE: <span class="up">PASSED</span></div>
+                    <div class="ticker-item">CORRUPTION_INDEX: <span class="down">-2.4%</span></div>
+                    <div class="ticker-item">TRANSPARENCY_SCORE: <span class="up">+15%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">D.H.S.S. <span class="accent">LOUIS</span></div>
+
+        <!-- Mode Switcher (Navigation Toggle) -->
+        <div class="mode-toggle-container" id="mode-toggle-container"
+            aria-label="Navigate between Cyber and Finance pages">
+            <div class="slider-accent"></div>
+            <a href="index.html" class="mode-option" id="mode-cyber" title="Cyber Mode"
+                aria-label="Go to Cybersecurity page">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+            </a>
+            <a href="finance.html" class="mode-option active" id="mode-finance" title="Finance Mode"
+                aria-label="Finance audit page (current)">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                    <line x1="12" y1="10" x2="14" y2="8"></line>
+                    <circle cx="12" cy="6" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+        <ul class="nav-links" aria-label="Main navigation">
+            <li><a href="#about">PROFILE</a></li>
+            <li><a href="#skills">ASSETS</a></li>
+            <li><a href="#projects">REPORTS</a></li>
+            <li><a href="#contact" class="btn-primary">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="report-header">
+                    <div class="audit-badge">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        AUDITED & VERIFIED
+                    </div>
+                    <h1 class="report-name">Dülze Hkloë Sassie Shaikelta<br><span class="gold-text">LOUIS</span></h1>
+                    <p class="report-subtitle">Financial Integrity & Risk Assessment Specialist</p>
+                    <div class="divider-gold"></div>
+                </div>
+                <div class="finance-metrics-display">
+                    <div class="metric-box">
+                        <div class="metric-label">Compliance Rate</div>
+                        <div class="metric-value" data-target="98.6">0.0%</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="--width: 98.6%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Risk Level</div>
+                        <div class="metric-value low-risk">LOW</div>
+                        <div class="risk-indicator low"></div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Certifications</div>
+                        <div class="metric-value">5+</div>
+                        <div class="cert-icons">
+                            <span class="cert-dot"></span>
+                            <span class="cert-dot"></span>
+                            <span class="cert-dot"></span>
+                            <span class="cert-dot"></span>
+                            <span class="cert-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary" aria-label="View audit reports">View Reports</a>
+                    <a href="#contact" class="btn-secondary" aria-label="Request consultation">Request Audit</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Executive Profile Section -->
+        <section id="about" class="section-container">
+            <h2 class="section-title">EXECUTIVE PROFILE</h2>
+
+            <!-- Certification Timeline -->
+            <div class="cert-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">2023</div>
+                    <div class="timeline-content">
+                        <h4>Certified Compliance Officer</h4>
+                        <p>GRC Framework Specialization</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2024</div>
+                    <div class="timeline-content">
+                        <h4>Financial Audit Certification</h4>
+                        <p>ECC & Risk Assessment</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2025</div>
+                    <div class="timeline-content">
+                        <h4>Security Systems Auditor</h4>
+                        <p>Cybersecurity + Finance Integration</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card about-card">
+                <div class="about-text">
+                    <p id="typewriter-text">Dedicated to financial integrity, regulatory compliance (ECC), and governance auditing. Applying rigorous analytical methodology to detect fraud and ensure data accuracy. With a solid foundation in Accounting and Finance, I bring a unique analytical rigor to financial auditing, specializing in System Auditing, Compliance (GRC), and Risk Assessment. My background bridges the gap between technical infrastructure security and financial integrity.</p>
+                </div>
+                <!-- Financial Chart Visual -->
+                <div class="about-visual">
+                    <div class="financial-chart-visual">
+                        <div class="chart-container">
+                            <div class="donut-chart">
+                                <div class="chart-center">
+                                    <span class="chart-value" data-target="98.6">0.0</span>
+                                    <span class="chart-label">INDEX</span>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item"><span class="legend-color navy"></span>Compliance</div>
+                                <div class="legend-item"><span class="legend-color gold"></span>Risk Mgmt</div>
+                                <div class="legend-item"><span class="legend-color grey"></span>Audit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills / Asset Report Section -->
+        <section id="skills" class="section-container">
+            <h2 class="section-title">ASSET REPORT</h2>
+            <div class="skills-grid">
+                <!-- Asset Performance Graph -->
+                <div class="asset-category">
+                    <h3>PORTFOLIO PERFORMANCE</h3>
+                    <div class="asset-graph-container">
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">SQL / NoSQL Management</span>
+                                <span class="asset-value">98.4 <span class="trend-up">▲ 2.4%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 98%;"></div>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Financial Modeling (Excel/VBA)</span>
+                                <span class="asset-value">96.8 <span class="trend-up">▲ 1.8%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 96%;"></div>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Data Warehousing</span>
+                                <span class="asset-value">92.0 <span class="trend-steady">► 0.0%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Reg. Compliance (ECC)</span>
+                                <span class="asset-value">95.5 <span class="trend-up">▲ 3.1%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <span class="asset-name">Risk Management (GRC)</span>
+                                <span class="asset-value">99.0 <span class="trend-up">▲ 0.5%</span></span>
+                            </div>
+                            <div class="asset-bar-bg">
+                                <div class="asset-bar-fill" style="--width: 99%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Cards -->
+                <div class="service-cards-container">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h4>Analyse de Performance</h4>
+                        <p>Optimisation des flux financiers et reporting stratégique.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M12 18v-6"></path>
+                                <path d="M8 15h8"></path>
+                            </svg>
+                        </div>
+                        <h4>Certification des Comptes</h4>
+                        <p>Validation et audit de conformité aux normes comptables.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h4>Gestion des Risques</h4>
+                        <p>Évaluation et mitigation des risques financiers.</p>
+                    </div>
+                </div>
+
+                <!-- Development Skills -->
+                <div class="skill-category">
+                    <h3>TECHNICAL TOOLS</h3>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">VBA / Excel</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Version Control (Git)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects / Market Analysis Section -->
+        <section id="projects" class="section-container">
+            <h2 class="section-title">MARKET ANALYSIS</h2>
+            <div class="projects-grid">
+                <!-- Stock Card 1: Process Optimization -->
+                <article class="stock-card">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: OPS-OPT</span>
+                        <span class="ticker-change positive">▲ +30.0%</span>
+                    </div>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Optimisation des Processus</h3>
+                        <p class="stock-desc">Conception d'une solution centralisée pour réduire la redondance
+                            administrative.</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">ROI</span>
+                                <span class="meta-value">High</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">EFFICIENCY</span>
+                                <span class="meta-value">Optimal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stock-footer">
+                        <a href="#" class="link-arrow">View Analysis →</a>
+                    </div>
+                </article>
+
+                <!-- Stock Card 2: Governance Audit -->
+                <article class="stock-card">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: GRC-AUD</span>
+                        <span class="ticker-change positive">▲ COMPLIANT</span>
+                    </div>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Audit de Gouvernance</h3>
+                        <p class="stock-desc">Cartographie des risques et mise en conformité réglementaire (ECC).</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">RISK</span>
+                                <span class="meta-value low-risk">Mitigated</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">STATUS</span>
+                                <span class="meta-value">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stock-footer">
+                        <a href="#" class="link-arrow">View Report →</a>
+                    </div>
+                </article>
+
+                <!-- Stock Card 3: Financial Automation -->
+                <article class="stock-card">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: PY-AUTO</span>
+                        <span class="ticker-change positive">▲ +40.0%</span>
+                    </div>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Réconciliation Automatisée</h3>
+                        <p class="stock-desc">Scripting Python pour le rapprochement bancaire et la fiabilité des
+                            données.</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">SPEED</span>
+                                <span class="meta-value">max_vel</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">ACCURACY</span>
+                                <span class="meta-value">99.9%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stock-footer">
+                        <a href="#" class="link-arrow">View Metrics →</a>
+                    </div>
+                </article>
+
+                <!-- Stock Card 4: Digital Marketing Experience -->
+                <article class="stock-card">
+                    <div class="stock-header">
+                        <span class="ticker-symbol">TKR: EDU-MKT</span>
+                        <span class="ticker-change positive">▲ MENTOR</span>
+                    </div>
+                    <div class="stock-body">
+                        <h3 class="stock-title">Formation Marketing Digital</h3>
+                        <p class="stock-desc">Conception de curriculum et mentorat d'étudiants en marketing digital et communication.</p>
+                        <div class="stock-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">IMPACT</span>
+                                <span class="meta-value">High</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">ROLE</span>
+                                <span class="meta-value">Tutor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stock-footer">
+                        <span class="link-arrow">Experience →</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="glass-card contact-wrapper">
+                <h3>Ready to ensure financial integrity?</h3>
+                <p>Available for audit consulting and compliance assessment.</p>
+                <div id="contact-interaction-zone">
+                    <button id="dynamic-contact-btn" class="finance-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span class="btn-text">ACCESS CONTACT</span>
+                    </button>
+
+                    <div id="contact-reveal" class="hidden-reveal">
+                        <div class="contact-card-content">
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/dülze-hkloë-sassie-shaikelta-louis-1701b7370"
+                                    target="_blank" class="social-icon-btn" data-tooltip="LinkedIn"
+                                    aria-label="Visit LinkedIn profile">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Sass-1" target="_blank" class="social-icon-btn"
+                                    data-tooltip="GitHub" aria-label="Visit GitHub profile">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="mailto:sassie.louis@esih.edu" class="social-icon-btn" data-tooltip="Email"
+                                    aria-label="Send email">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="contact-card-details">
+                                <p class="contact-name">Louis Sassie</p>
+                                <p class="contact-role">Financial Audit Specialist</p>
+                                <p class="contact-email">sassie.louis@esih.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="back-to-top" title="Back to Top">↑</div>
+
+    <footer class="footer">
+        <p class="copyright">© 2026 Louis Sassie. All Rights Reserved.</p>
+        <p class="footer-tagline">Financial Integrity • Regulatory Compliance • Risk Assessment</p>
+    </footer>
+
+    <script src="finance.js"></script>
+</body>
+
+</html>

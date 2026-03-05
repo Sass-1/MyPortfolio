@@ -21,7 +21,6 @@
 
 <body>
     <div class="background-mesh"></div>
-    <div class="finance-bg-pattern finance-only"></div>
     <div class="scanline-overlay"></div>
     <div class="data-stream-background">
         <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -36,40 +35,27 @@
     <canvas id="matrix-canvas"></canvas>
 
     <div class="status-bar-container">
-        <p class="status-bar-text cyber-only">SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [
+        <p class="status-bar-text">SYSTEM STATUS: [ <span class="status-stable">STABLE</span> ] // ACCESS: [
             GRANTED ] // IDENTITY: [ VERIFIED ]</p>
-
-        <!-- Finance Ticker -->
-        <div class="finance-ticker-container finance-only">
-            <div class="ticker-wrap">
-                <div class="ticker-move">
-                    <div class="ticker-item">CORRUPTION_INDEX: <span class="down">-2.4%</span></div>
-                    <div class="ticker-item">TRANSPARENCY_SCORE: <span class="up">+15%</span></div>
-                    <div class="ticker-item">AUDIT_COMPLETION: <span class="neutral">98%</span></div>
-                    <div class="ticker-item">RISK_LEVEL: <span class="low">LOW</span></div>
-                    <div class="ticker-item">REGULATORY_COMPLIANCE: <span class="up">PASSED</span></div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <nav class="navbar">
         <div class="logo">D.H.S.S. <span class="accent" data-text="LOUIS">LOUIS</span></div>
 
-        <!-- Mode Switcher (Sliding Toggle) -->
+        <!-- Mode Switcher (Navigation Toggle) -->
         <div class="mode-toggle-container" id="mode-toggle-container"
-            aria-label="Theme toggle between Cyber and Finance modes">
+            aria-label="Navigate between Cyber and Finance pages">
             <div class="slider-accent"></div>
-            <button class="mode-option active" id="mode-cyber" data-mode="cyber" title="Cyber Mode"
-                aria-label="Switch to Cyber security mode">
+            <a href="index.html" class="mode-option active" id="mode-cyber" title="Cyber Mode"
+                aria-label="Cybersecurity page (current)">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="4 17 10 11 4 5"></polyline>
                     <line x1="12" y1="19" x2="20" y2="19"></line>
                 </svg>
-            </button>
-            <button class="mode-option" id="mode-finance" data-mode="finance" title="Finance Mode"
-                aria-label="Switch to Finance audit mode">
+            </a>
+            <a href="finance.html" class="mode-option" id="mode-finance" title="Finance Mode"
+                aria-label="Go to Finance audit page">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="12" y1="20" x2="12" y2="10"></line>
@@ -78,7 +64,7 @@
                     <line x1="12" y1="10" x2="14" y2="8"></line>
                     <circle cx="12" cy="6" r="2"></circle>
                 </svg>
-            </button>
+            </a>
         </div>
         <ul class="nav-links" aria-label="Main navigation">
             <li><a href="#about">WHOAMI</a></li>
@@ -478,6 +464,28 @@
                     </div>
                     <span class="link-arrow">Experience -></span>
                 </article>
+                <!-- Project 4 (Cyber) -->
+                <article class="project-card glass-card cyber-only">
+                    <div class="project-header">
+                        <h3 class="mono">Interactive Projects</h3>
+                        <span class="icon">
+                            <!-- Game Controller Icon -->
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="6" y1="12" x2="10" y2="12"></line>
+                                <line x1="8" y1="10" x2="8" y2="14"></line>
+                                <line x1="15" y1="13" x2="15.01" y2="13"></line>
+                                <line x1="18" y1="11" x2="18.01" y2="11"></line>
+                                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                            </svg>
+                        </span>
+                    </div>
+                    <p>I develop interactive games and applications using modern web technologies.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>PGZERO</span>
+                    </div>
+                    <a href="#" class="link-arrow">Games Menu  -></a>
+                </article>
 
                 <!-- Finance Only Projects -->
 
@@ -562,22 +570,7 @@
 
         </section>
 
-        <!-- Interactive Games Section (Cyber Mode Only) -->
-        <section id="interactive" class="section-container cyber-only">
-            <h2 class="section-title"><span class="mono">INTERACTIVE PROJECTS</span></h2>
-            <div class="games-grid">
-                <!-- Game Card 1: Orange Invasion -->
-                <div class="game-card glass-game">
-                    <div class="game-image-placeholder">
-                        <img src="img/orange-invasion.png" alt="Orange Invasion Preview" class="game-demo-img">
-                    </div>
-                    <h3 class="game-title">ORANGE INVASION</h3>
-                    <p class="game-description">Defend against waves of cyber threats in this fast-paced arcade-style
-                        game. Test your reflexes and strategic thinking.</p>
-                    <button class="play-btn" onclick="alert('Orange Invasion Game - Coming Soon!')">PLAY</button>
-                </div>
-            </div>
-        </section>
+        
 
         <section id="contact" class="section-container">
             <h2 class="section-title"><span class="mono">CONTACT</span></h2>
