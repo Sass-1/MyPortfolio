@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Typewriter Effect
-    const text = "I bridge the gap between technical infrastructure security and financial integrity. With a solid foundation in Accounting and Finance, I bring a unique analytical rigor to cybersecurity, specializing in System Auditing, Compliance (GRC), and Risk Assessment. My background allows me to understand not just the technical vulnerability, but its impact on the organization’s assets. I am also a former Digital Marketing Tutor, passionate about clear communication and technical mentorship.";
+    const text = "I specialize in cybersecurity, focusing on System Auditing, Compliance (GRC), and Risk Assessment. I bring a strong analytical rigor to identifying technical vulnerabilities and understanding their impact on organizational assets. With skills in C++, Python, and network security, I build tools and solutions to strengthen digital defenses. I am also a former Digital Marketing Tutor, passionate about clear communication and technical mentorship.";
 
     const speed = 30; // Faster typing speed
     let i = 0;
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Scanning port 443 [HTTPS]...",
         "Traffic analysis: NORMAL",
         "Buffer overflow protection: ACTIVE",
-        "Financial integrity check: PASSED",
+        "Firewall rules: ENFORCED",
         "Loading modules: [GRC_V2.0, AUDIT_CORE]",
         "Identity verified: LOUIS.SEC"
     ];
@@ -236,263 +236,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // MODE SWITCHER LOGIC (SLIDING TOGGLE)
-    // ==========================================
-    const modeToggleContainer = document.getElementById('mode-toggle-container');
-    const modeCyber = document.getElementById('mode-cyber');
-    const modeFinance = document.getElementById('mode-finance');
-
-    // Hero Element References
-    const heroName = document.querySelector('.long-name');
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    const typewriterElement = document.getElementById("typewriter-text");
-
-    // Bio Content
-    const bioCyber = "Focus on offensive security operations, penetration testing, and infrastructure resilience analysis. Specialized in PhishDetector development and network reconnaissance.";
-    const bioFinance = "Dedicated to financial integrity, regulatory compliance (ECC), and governance auditing. Applying rigorous analytical methodology to detect fraud and ensure data accuracy.";
-
-    // Finance Ticker Animation
-    function animateFinanceNumbers() {
-        const counters = document.querySelectorAll('.chart-value');
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            if (!target) return;
-
-            const duration = 2000; // ms
-            const start = 0;
-            const startTime = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                // Ease out quart
-                const ease = 1 - Math.pow(1 - progress, 4);
-
-                const current = start + (target - start) * ease;
-                counter.innerText = current.toFixed(1);
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    counter.innerText = target.toFixed(1);
-                }
-            }
-            requestAnimationFrame(update);
-        });
-    }
-
-    // Asset Graph Animation
-    function animateAssetGraph() {
-        const bars = document.querySelectorAll('.asset-bar-fill');
-        bars.forEach((bar, index) => {
-            const width = bar.style.getPropertyValue('--width');
-            // Reset first to allow re-animation
-            bar.style.width = '0';
-            // Stagger animations for visual effect
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100 + (index * 150));
-        });
-    }
-
-    // Enhanced number counter animation with easing
-    function animateCounters() {
-        const counters = document.querySelectorAll('[data-target]');
-        counters.forEach(counter => {
-            const target = parseFloat(counter.getAttribute('data-target'));
-            if (!target || target === 0) return;
-
-            const duration = 2000; // ms
-            const startTime = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                // Cubic ease-out for smooth deceleration
-                const easeProgress = 1 - Math.pow(1 - progress, 3);
-                const current = easeProgress * target;
-
-                counter.innerText = current.toFixed(1);
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    counter.innerText = target.toFixed(1);
-                }
-            }
-            requestAnimationFrame(update);
-        });
-    }
-
-    // Animate metric bars in finance hero
-    function animateMetricBars() {
-        const bars = document.querySelectorAll('.metric-fill');
-        bars.forEach((bar, index) => {
-            const width = bar.style.width || '0%';
-            bar.style.width = '0%';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100 + (index * 200));
-        });
-    }
-
-    // Function to set theme
-    function setTheme(theme) {
-        if (theme === 'finance') {
-            document.body.setAttribute('data-theme', 'finance');
-            if (modeToggleContainer) modeToggleContainer.classList.add('finance-active');
-
-            // Trigger animation
-            setTimeout(animateFinanceNumbers, 300); // Slight delay for transition
-            setTimeout(animateAssetGraph, 400); // Trigger graph animation
-            setTimeout(animateMetricBars, 500); // Animate metrics in hero
-
-            if (modeFinance) modeFinance.classList.add('active');
-            if (modeCyber) modeCyber.classList.remove('active');
-
-            // Canvas handled by CSS (display: none)
-            if (canvas) canvas.style.opacity = '0';
-
-            // Dynamic Hero Content (Finance)
-            if (heroName) heroName.innerHTML = `Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span>`;
-
-            // Update Bio
-            if (typewriterElement) {
-                typewriterElement.textContent = bioFinance;
-            }
-
-        } else {
-            document.body.removeAttribute('data-theme');
-            if (modeToggleContainer) modeToggleContainer.classList.remove('finance-active');
-
-            if (modeCyber) modeCyber.classList.add('active');
-            if (modeFinance) modeFinance.classList.remove('active');
-
-            // Canvas handled by CSS
-            if (canvas) canvas.style.opacity = '1';
-
-            // Dynamic Hero Content (Cyber)
-            if (heroName) heroName.innerHTML = `Dülze Hkloë Sassie Shaikelta <br><span class="gradient-text">LOUIS</span>`;
-
-            // Update Bio
-            if (typewriterElement) {
-                typewriterElement.textContent = bioCyber;
-            }
-        }
-
-
-
-        // Save preference
-        localStorage.setItem('portfolio-theme', theme);
-    }
-
-    // Event Listeners
-    if (modeToggleContainer) {
-        modeToggleContainer.addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('portfolio-theme') || 'cyber';
-            const newTheme = currentTheme === 'cyber' ? 'finance' : 'cyber';
-            setTheme(newTheme);
-        });
-    }
-
-    // Load saved preference
-    const savedTheme = localStorage.getItem('portfolio-theme');
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        // Default to Cyber
-        setTheme('cyber');
-    }
-
-
-    // ==========================================
     // CONTACT BUTTON INTERACTION
     // ==========================================
     const contactBtn = document.getElementById('dynamic-contact-btn');
     const contactReveal = document.getElementById('contact-reveal');
     const CHARS = '!@#$%^&*()_+-=[]{}|;:,.<>?/1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    // Update button text based on mode immediately
-    function updateContactButtonText() {
-        if (!contactBtn) return;
-        const isFinance = document.body.getAttribute('data-theme') === 'finance';
+    // Initialize contact button
+    if (contactBtn) {
         const btnTextSpan = contactBtn.querySelector('.btn-text');
-
-        if (isFinance) {
-            // Check if already updated to avoid flicker
-            if (contactBtn.innerText.includes("View Contact Card")) return;
-
-            contactBtn.innerHTML = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> <span class="btn-text">View Contact Card</span>`;
-        } else {
-            if (contactBtn.innerText.includes("DECRYPT CONTACT")) return;
-            contactBtn.innerHTML = `<span class="btn-text">DECRYPT CONTACT</span>`;
-        }
+        if (btnTextSpan) btnTextSpan.textContent = 'DECRYPT CONTACT';
     }
-
-    // Observe body attribute changes to update button text dynamically
-    const themeObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.type === "attributes" && mutation.attributeName === "data-theme") {
-                updateContactButtonText();
-                // Hide reveal if theme changes to reset interaction
-                if (contactReveal) contactReveal.classList.remove('visible-reveal');
-                if (contactBtn) contactBtn.classList.remove('btn-hidden');
-                if (contactBtn) {
-                    contactBtn.style.opacity = '1';
-                    contactBtn.style.border = "";
-                    contactBtn.style.color = "";
-                }
-            }
-        });
-    });
-    themeObserver.observe(document.body, { attributes: true });
-
-    // Initialize text
-    updateContactButtonText();
 
     // Interaction Click Handler
     if (contactBtn) {
         contactBtn.addEventListener('click', () => {
-            const isFinance = document.body.getAttribute('data-theme') === 'finance';
+            // Cyber Mode: Decrypt Animation
+            const originalText = "ACCESS GRANTED";
+            const btnText = contactBtn.querySelector('.btn-text');
+            let iterations = 0;
+            const interval = setInterval(() => {
+                if (btnText) {
+                    btnText.innerText = originalText.split('')
+                        .map((letter, index) => {
+                            if (index < iterations) {
+                                return originalText[index];
+                            }
+                            return CHARS[Math.floor(Math.random() * CHARS.length)];
+                        })
+                        .join('');
+                }
 
-            if (isFinance) {
-                // Finance Mode: Smooth Reveal
-                contactBtn.style.opacity = '0';
-                setTimeout(() => {
-                    contactBtn.classList.add('btn-hidden');
-                    contactReveal.classList.add('visible-reveal');
-                }, 300);
-            } else {
-                // Cyber Mode: Decrypt Animation
-                const originalText = "ACCESS GRANTED";
-                const btnText = contactBtn.querySelector('.btn-text');
-                let iterations = 0;
-                const interval = setInterval(() => {
-                    if (btnText) {
-                        btnText.innerText = originalText.split('')
-                            .map((letter, index) => {
-                                if (index < iterations) {
-                                    return originalText[index];
-                                }
-                                return CHARS[Math.floor(Math.random() * CHARS.length)];
-                            })
-                            .join('');
-                    }
-
-                    if (iterations >= originalText.length) {
-                        clearInterval(interval);
-                        // After decryption, show content
-                        setTimeout(() => {
-                            contactReveal.classList.add('visible-reveal');
-                            contactBtn.style.border = "1px solid #22c55e"; // Green
-                            contactBtn.style.color = "#22c55e";
-                        }, 500);
-                    }
-                    iterations += 1 / 2; // Speed control
-                }, 30);
-            }
+                if (iterations >= originalText.length) {
+                    clearInterval(interval);
+                    // After decryption, show content
+                    setTimeout(() => {
+                        contactReveal.classList.add('visible-reveal');
+                        contactBtn.style.border = "1px solid #22c55e"; // Green
+                        contactBtn.style.color = "#22c55e";
+                    }, 500);
+                }
+                iterations += 1 / 2; // Speed control
+            }, 30);
         });
     }
 });
